@@ -1,50 +1,32 @@
 import { str } from "../utils/utils";
-import { DSL_Error, LocationTrace } from "./errors";
-
-export enum TokenType {
-    name,
-    number,
-    paren,
-    operator,
-    whitespace,
-    newline,
-    eof,
-}
-
-export class Token {
-    constructor(
-        /** token contents */
-        public readonly c: string,
-        /** source */
-        public readonly s: LocationTrace,
-        /** kind */
-        public readonly t: TokenType) { }
-}
+import { ScriptError, LocationTrace, UNKNOWN_LOCATION } from "./errors";
+import { SymbolType, Thing, ThingType } from "./thing";
 
 type Rule = [
     RegExp,
-    outputToken: TokenType,
+    ThingType,
+    subtype: SymbolType | null,
+    process: (x: string) => any
 ];
+const id = <T>(x: T): T => x;
 const TOKENIZE_RULES: Rule[] = [
-    [/^0x[a-f0-9]+|^-?0b[01]+/i, TokenType.number],
-    [/^(\.\d+|\d+\.?\d*)(e[+-]?\d+)?/i, TokenType.number],
-    [/^[()[\]{}"']/, TokenType.paren],
-    [/^\p{Punctuation}/u, TokenType.operator],
-    [/^\p{Alpha}[\p{Alpha}\p{Number}_]*/u, TokenType.name],
-    [/^[\s]+/, TokenType.whitespace],
-    [/^\n/, TokenType.newline],
-    [/^./, TokenType.operator]
+    [/^0x[a-f0-9]+|^-?0b[01]+/i, ThingType.number, null, Number],
+    [/^(\.\d+|\d+\.?\d*)(e[+-]?\d+)?/i, ThingType.number, null, Number],
+    [/^\p{Punctuation}/u, ThingType.symbol, SymbolType.operator, id],
+    [/^\p{Alpha}[\p{Alpha}\p{Number}_]*/u, ThingType.symbol, SymbolType.name, id],
+    [/^\n|^((?!\n)\s)+/, ThingType.symbol, SymbolType.space, id],
+    [/^./, ThingType.symbol, SymbolType.operator, id]
 ];
 
-export function tokenize(source: string, filename: URL) {
+export function tokenize(source: string, filename: URL = UNKNOWN_LOCATION.file) {
     var line = 0, col = 0;
-    const out: Token[] = [];
+    const out: Thing[] = [];
     tokens: while (source.length > 0) {
-        for (var [regex, type] of TOKENIZE_RULES) {
+        for (var [regex, type, subtype, process] of TOKENIZE_RULES) {
             const match = regex.exec(source);
             if (match) {
                 const chunk = match[0];
-                if (type !== undefined) out.push(new Token(chunk, new LocationTrace(line, col, filename), type));
+                out.push(new Thing(type, subtype, [], process(match[0]), match[0], "", new LocationTrace(line, col, filename)));
                 const interlines = chunk.split("\n");
                 if (interlines.length > 1) {
                     col = interlines.at(-1)!.length;
@@ -56,8 +38,8 @@ export function tokenize(source: string, filename: URL) {
                 continue tokens;
             }
         }
-        throw new DSL_Error(`unexpected ${str(source[0])}`, new LocationTrace(line, col, filename));
+        throw new ScriptError(`unexpected ${str(source[0])}`, new LocationTrace(line, col, filename));
     }
-    out.push(new Token("", new LocationTrace(line, col, filename), TokenType.eof));
+    out.push(new Thing(ThingType.end, null, [], null, "", "", new LocationTrace(line, col, filename)));
     return out;
 }

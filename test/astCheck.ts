@@ -1,16 +1,16 @@
 import { expect } from "bun:test";
-import { DSL_Error, ErrorNote } from "../src/scripting/errors";
-import { parseTokens } from "../src/scripting/parser1";
-import { Thing, ThingType } from "../src/scripting/thing";
+import { ErrorNote, ScriptError } from "../src/scripting/errors";
+import { parse } from "../src/scripting/parse";
+import { ThingType } from "../src/scripting/thing";
 import { tokenize } from "../src/scripting/tokenizer";
 
 export const F = new URL("about:test");
 
 type ASTSpec = {
-    t: ThingType,
-    t2: number | null,
-    v?: any,
-    c?: readonly ASTSpec[]
+    type: ThingType,
+    subtype: number | null,
+    value?: any,
+    children: readonly ASTSpec[]
 }
 function checkAST(ast: any, spec: ASTSpec, path: string) {
     for (var prop of Object.keys(spec)) {
@@ -31,16 +31,16 @@ function checkAST(ast: any, spec: ASTSpec, path: string) {
 }
 
 export function makespec(type: ThingType, subtype: number | null, value: any | null = null, ...children: readonly ASTSpec[]): ASTSpec {
-    const obj: ASTSpec = { t: type, t2: subtype, c: children };
-    if (value !== null) obj.v = value;
+    const obj: ASTSpec = { type: type, subtype: subtype, children: children };
+    if (value !== null) obj.value = value;
     return obj;
 }
 
 export function expectParse(p: string, spec: ASTSpec) {
     try {
-        checkAST(parseTokens(tokenize(p, F)), spec, "");
+        checkAST(parse(p, F), spec, "");
     } catch (e) {
-        if (e instanceof DSL_Error) {
+        if (e instanceof ScriptError) {
             expect.unreachable(e.displayOn({ [F.href]: p }) + e.stack);
         }
         else throw e;
@@ -49,10 +49,10 @@ export function expectParse(p: string, spec: ASTSpec) {
 
 export function expectParseError(p: string, error: string, note?: string) {
     try {
-        parseTokens(tokenize(p, F));
+        parse(p, F);
         expect.unreachable("Did not throw an error!");
     } catch (e: any) {
-        expect(e).toBeInstanceOf(DSL_Error);
+        expect(e).toBeInstanceOf(ScriptError);
         expect(e.message).toEqual(error);
         if (note !== undefined) {
             expect(e.notes.map((n: ErrorNote) => n.message)).toContain(note);
@@ -62,9 +62,9 @@ export function expectParseError(p: string, error: string, note?: string) {
 
 // export function expectEval(p: string, spec: ASTSpec) {
 //     try {
-//         checkAST(TODO parseTokens(tokenize(p, F)), spec, "");
+//         checkAST(TODO parse(p, F), spec, "");
 //     } catch (e) {
-//         if (e instanceof CrakError) {
+//         if (e instanceof ScriptError) {
 //             expect.unreachable(e.displayOn({ [F.href]: p }) + e.stack);
 //         }
 //         else throw e;
@@ -73,10 +73,10 @@ export function expectParseError(p: string, error: string, note?: string) {
 
 // export function expectEvalError(p: string, error: string, note?: string) {
 //     try {
-//         TODO parseTokens(tokenize(p, F));
+//         TODO parse(p, F);
 //         expect.unreachable("Did not throw an error!");
 //     } catch (e: any) {
-//         expect(e).toBeInstanceOf(CrakError);
+//         expect(e).toBeInstanceOf(ScriptError);
 //         expect(e.message).toEqual(error);
 //         if (note !== undefined) {
 //             expect(e.notes.map((n: ErrorNote) => n.message)).toContain(note);

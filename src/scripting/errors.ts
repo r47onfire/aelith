@@ -23,7 +23,7 @@ export class ErrorNote {
     constructor(public message: string, public location: LocationTrace) { }
 }
 
-export class DSL_Error extends Error {
+export class ScriptError extends Error {
     constructor(message: string, public trace: LocationTrace = UNKNOWN_LOCATION, public notes: ErrorNote[] = []) {
         super(message);
     }

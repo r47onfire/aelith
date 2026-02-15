@@ -53,7 +53,6 @@ Map {
     position
     animation data
     inventory data
-    state of hook threads
 }
 ```
 
@@ -63,9 +62,11 @@ The entity objects also manage loading and unloading their KAPLAY game objects, 
 
 Even less sure about this. Since entities can be made of many objects and can continue animating in the background when the actual KAPLAY objects don't exist, the animation state will have to be stored externally.
 
-### Hook thread state
+### Hook threads
 
-Serializing the state will be super easy once I change the execution to a stack-based VM and scheduler. In general the first client to load an entity gets to run that entity's hook code, the only downside is if in the weird chance that 2 clients load the same entity at the same time and the load status packets get crossed then there'll be a race condition. I don't know how to detect this, but there will then be some way for the conflict to be resolved and all but one to determine they should "back off" simulating that entity and only watch the Y.Map for updates and push them to KAPLAY.
+In general the first client to load an entity gets to run that entity's hook code, the only downside is if in the weird chance that 2 clients load the same entity at the same time and the load status packets get crossed then there'll be a race condition. I don't know how to detect this, but there will then be some way for the conflict to be resolved and all but one to determine they should "back off" simulating that entity and only watch the Y.Map for updates and push them to KAPLAY.
+
+The hook VM state does not get serialized because (a) it's largely ephemeral, and (b) it's rather large being 90% bootstrapped. However in a pinch, it can be.
 
 ## Loading process
 

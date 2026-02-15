@@ -19,9 +19,7 @@ So you crash-landed on a dusty barren world. It would seem as though you're stuc
 
     Note: half the time this is actually a custom build of KAPLAY, due to the fact that KAPLAY is free software and I have a fork in which I regularly fix bugs and add new features to KAPLAY itself.
 
-* Aelith's actual game assets and logic is contained by a giant JSON file that gets assembled by a [build script](./scripts/build_datapack.py). The idea is that one could replace this JSON file with a different one, and have a whole different game, without changing any of the Javascript.
-
-* unfortunately I have not written any documentation for the datapack's structure and fields beyond the TypeScript types in [DataPackFormat.ts](./src/DataPackFormat.ts). The scripting function using JSON arrays as Lisp is bound to be confusing and also unfortunately the exact semantics of this is also completely undocumented. However, I would welcome documentation PRs as much as any other.
+* The actual data, assets, and scripting is implemented using a almost certainly terrible scripting language that is entirely undocumented.
 
 ## Top-level roadmap
 

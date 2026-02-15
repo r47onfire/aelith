@@ -1,4 +1,5 @@
-import { describe, test } from "bun:test";
+import { describe, expect, test } from "bun:test";
+import { parse } from "../src/scripting/parse";
 import { BlockType, SymbolType, ThingType } from "../src/scripting/thing";
 import { expectParse, expectParseError, makespec } from "./astCheck";
 
@@ -10,7 +11,7 @@ describe("basics", () => {
     test("symbol", () => {
         expectParse("hello",
             makespec(ThingType.block, BlockType.toplevel, null,
-                makespec(ThingType.symbol, SymbolType.nameLike, "hello")));
+                makespec(ThingType.symbol, SymbolType.name, "hello")));
     });
     test("raw string", () => {
         expectParse("'hello'",
@@ -67,29 +68,65 @@ describe("strings", () => {
             makespec(ThingType.block, BlockType.toplevel, null,
                 makespec(ThingType.string, null, "hello\u0001")));
         expectParseError("\"\\u{1234567890}\"", "escape out of range");
-        expectParseError("\"\\u{\"", "\"{\" was never closed");
+        expectParseError("\"\\u{\"", "\"\\\"\" was never closed");
+    });
+    test("parses string with interpolations", () => {
+        expectParse("\"hello {world+\"another string\"}\"",
+            makespec(ThingType.block, BlockType.toplevel, null,
+                makespec(ThingType.block, BlockType.string, null,
+                    makespec(ThingType.string, null, "hello "),
+                    makespec(ThingType.block, BlockType.round, null,
+                        makespec(ThingType.symbol, SymbolType.name, "world"),
+                        makespec(ThingType.symbol, SymbolType.operator, "+"),
+                        makespec(ThingType.string, null, "another string")))));
     });
 });
 describe("symbols", () => {
     test("operators and words", () => {
         expectParse("a+b",
             makespec(ThingType.block, BlockType.toplevel, null,
-                makespec(ThingType.symbol, SymbolType.nameLike, "a"),
-                makespec(ThingType.symbol, SymbolType.operatorLike, "+"),
-                makespec(ThingType.symbol, SymbolType.nameLike, "b")));
+                makespec(ThingType.symbol, SymbolType.name, "a"),
+                makespec(ThingType.symbol, SymbolType.operator, "+"),
+                makespec(ThingType.symbol, SymbolType.name, "b")));
     });
     test("operators don't get merged", () => {
         expectParse("a+=&b",
             makespec(ThingType.block, BlockType.toplevel, null,
-                makespec(ThingType.symbol, SymbolType.nameLike, "a"),
-                makespec(ThingType.symbol, SymbolType.operatorLike, "+"),
-                makespec(ThingType.symbol, SymbolType.operatorLike, "="),
-                makespec(ThingType.symbol, SymbolType.operatorLike, "&"),
-                makespec(ThingType.symbol, SymbolType.nameLike, "b")));
+                makespec(ThingType.symbol, SymbolType.name, "a"),
+                makespec(ThingType.symbol, SymbolType.operator, "+"),
+                makespec(ThingType.symbol, SymbolType.operator, "="),
+                makespec(ThingType.symbol, SymbolType.operator, "&"),
+                makespec(ThingType.symbol, SymbolType.name, "b")));
     });
     test("whitespace counts as a symbol", () => {
         expectParse("  ",
             makespec(ThingType.block, BlockType.toplevel, null,
-                makespec(ThingType.symbol, SymbolType.whitespaceLike, "  ")));
+                makespec(ThingType.symbol, SymbolType.space, "  ")));
+    });
+});
+describe("blocks", () => {
+    test("blocks can nest", () => {
+        expectParse("([{}])",
+            makespec(ThingType.block, BlockType.toplevel, null,
+                makespec(ThingType.block, BlockType.round, null,
+                    makespec(ThingType.block, BlockType.square, null,
+                        makespec(ThingType.block, BlockType.curly, null)))));
+    });
+    test("comment blocks ignore all inside", () => {
+        expectParse("##((((\"'//[}[)##",
+            makespec(ThingType.block, BlockType.toplevel, null,
+                makespec(ThingType.symbol, SymbolType.space, null)));
+    });
+    test("line comment blocks can be terminated with EOF or newline", () => {
+        expectParse("# hi\n",
+            makespec(ThingType.block, BlockType.toplevel, null,
+                makespec(ThingType.symbol, SymbolType.space, null)));
+        expectParse("# hi",
+            makespec(ThingType.block, BlockType.toplevel, null,
+                makespec(ThingType.symbol, SymbolType.space, null)));
+    });
+    test("comments round-trip", () => {
+        expect(parse("## hi ##").unparse()).toEqual("## hi ##")
+        expect(parse("# hi\n").unparse()).toEqual("# hi\n")
     });
 });

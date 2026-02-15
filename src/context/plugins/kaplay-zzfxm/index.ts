@@ -9,7 +9,7 @@ export interface ZzFXMPlugin {
 export function kaplayZzFXM(K: KAPLAYCtx): ZzFXMPlugin {
     return {
         loadZzFXM(name, parameters) {
-            return K.load((async () => {
+            return K.load((async _ => {
                 const [l, r] = await zzfxM(...parameters);
                 const buf = K.audioCtx.createBuffer(2, l.length, ZZFX.sampleRate);
                 buf.getChannelData(0).set(l, 0);
