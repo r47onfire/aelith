@@ -2,13 +2,12 @@ import { expect } from "bun:test";
 import { ErrorNote, ScriptError } from "../src/scripting/errors";
 import { parse } from "../src/scripting/parse";
 import { ThingType } from "../src/scripting/thing";
-import { tokenize } from "../src/scripting/tokenizer";
 
 export const F = new URL("about:test");
 
 type ASTSpec = {
     type: ThingType,
-    subtype: number | null,
+    subtype: string | null,
     value?: any,
     children: readonly ASTSpec[]
 }
@@ -30,7 +29,7 @@ function checkAST(ast: any, spec: ASTSpec, path: string) {
     }
 }
 
-export function makespec(type: ThingType, subtype: number | null, value: any | null = null, ...children: readonly ASTSpec[]): ASTSpec {
+export function makespec(type: ThingType, subtype: string | null, value: any | null = null, ...children: readonly ASTSpec[]): ASTSpec {
     const obj: ASTSpec = { type: type, subtype: subtype, children: children };
     if (value !== null) obj.value = value;
     return obj;

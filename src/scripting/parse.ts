@@ -2,6 +2,7 @@ import { blockParse, BlockRule } from "./blockParse";
 import { ErrorNote, LocationTrace, ScriptError, UNKNOWN_LOCATION } from "./errors";
 import { BlockType, SymbolType, Thing, ThingType } from "./thing";
 import { tokenize } from "./tokenizer";
+import { unparse } from "./unparse";
 
 const baseBlocks = {
     "(": "round",
@@ -18,7 +19,7 @@ function makeBlock(this: BlockRule, items: Thing[], start: string, end: string, 
 }
 
 function makeComment(items: Thing[], start: string, end: string, loc: LocationTrace): Thing {
-    return new Thing(ThingType.symbol, SymbolType.space, [], start, start + items.map(i => i.unparse()).join(""), end, loc);
+    return new Thing(ThingType.symbol, SymbolType.space, [], start, start + items.map(i => unparse(i)).join(""), end, loc);
 }
 
 const defaultBlockRules: Record<string, BlockRule> = {
@@ -56,7 +57,7 @@ const defaultBlockRules: Record<string, BlockRule> = {
         skip: ["\\'", "\\\\"],
         inner: {},
         process(items, start, end, loc) {
-            const raw = items.map(item => item.unparse()).join("");
+            const raw = items.map(item => unparse(item)).join("");
             return new Thing(ThingType.string, null, [], raw.replaceAll(/\\(['"\\])/g, "$1"), start + raw, end, loc);
         },
     },
@@ -93,7 +94,7 @@ const defaultBlockRules: Record<string, BlockRule> = {
                         if (escPortion.length === 0) {
                             const curlyblock = items[++i];
                             if (curlyblock?.type !== ThingType.block) throw new ScriptError(`expected \"{\" after \"\\${next.value}\"`, (curlyblock ?? next).srcLocation, [new ErrorNote("note: use ' instead of \" to make this a raw string", loc)]);
-                            const fullEscape = "u" + curlyblock.unparse();
+                            const fullEscape = "u" + unparse(curlyblock);
                             curStringRaw += "\\" + fullEscape;
                             curString += unescape(fullEscape, curlyblock.srcLocation, true);
                         } else {
