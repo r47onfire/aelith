@@ -1,10 +1,10 @@
+import kaplayGamepadHaptics from "@r47onfire/kaplay-gamepad-haptics";
 import kaplay from "kaplay";
 import kaplayLighting from "kaplay-lighting";
 import { SCALE } from "../config/constants";
 import { kaplayBackground } from "./plugins/kaplay-background-more";
 import { kaplayDynamicStrings } from "./plugins/kaplay-dynamic-text";
 import { kaplayExtraDistance } from "./plugins/kaplay-extradistance";
-import { kaplayRumble } from "./plugins/kaplay-gamepad-rumble";
 import { kaplayHoverArea } from "./plugins/kaplay-hover-area";
 import { kaplayXterm256 } from "./plugins/kaplay-xterm256";
 import { kaplayZzFX } from "./plugins/kaplay-zzfx";
@@ -26,7 +26,7 @@ export const K = kaplay({
         // kaplayZzFXM,
         kaplayExtraDistance,
         kaplayDynamicStrings,
-        kaplayRumble,
+        kaplayGamepadHaptics,
         kaplayLighting,
         kaplayHoverArea,
         kaplayBackground,

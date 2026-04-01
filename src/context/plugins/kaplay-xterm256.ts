@@ -1,6 +1,6 @@
 import { Color, ColorArgs, KAPLAYCtx } from "kaplay";
 
-export type XT256ColorArgs = ColorArgs | [`xt${string}`];
+export type XT256ColorArgs = ColorArgs | [`xt${number}`];
 export function kaplayXterm256(k: KAPLAYCtx) {
     const oldRGB = k.rgb as any;
     const xtermColors: Color[] = [];
@@ -8,7 +8,7 @@ export function kaplayXterm256(k: KAPLAYCtx) {
     for (x = 0; x < 8; x++) {
         xtermColors[x] = oldRGB(x & 1 ? 0xAA : 0, x & 2 ? 0xAA : 0, x & 4 ? 0xAA : 0);
     }
-    for (x = 8; x < 16; x++) {
+    for (; x < 16; x++) {
         xtermColors[x] = oldRGB(x & 1 ? 0xFF : 0x55, x & 2 ? 0xFF : 0x55, x & 4 ? 0xFF : 0x55);
     }
     const cubeLevels = [0x00, 0x66, 0x88, 0xBB, 0xDD, 0xFF];
@@ -24,7 +24,7 @@ export function kaplayXterm256(k: KAPLAYCtx) {
     }
     return {
         rgb(...args: XT256ColorArgs) {
-            if (args.length === 1 && typeof args[0] === "string" && /^xt/.test(args[0]!)) {
+            if (args.length === 1 && typeof args[0] === "string" && /^xt0*([0-9][0-9]?|1[0-9][0-9]|2[0-9]?|2[0-4][0-9]|25[0-5])$/.test(args[0]!)) {
                 return xtermColors[parseInt(args[0].slice(2))];
             }
             return oldRGB(...args);

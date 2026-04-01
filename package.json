@@ -2,6 +2,7 @@
     "name": "aelith",
     "description": "",
     "keywords": [],
+    "private": true,
     "author": "dragoncoder047",
     "main": "src/main.ts",
     "scripts": {
@@ -15,9 +16,8 @@
         "build:minified": "pnpm build:clean && pnpm build --minify",
         "dev": "pnpm run \"/^dev:.*/\"",
         "lint": "pnpm tsc && python3 scripts/lint_strings.py",
-        "linecount": "for f in `git ls-files -- '[^.]**.*'`; do enca $f -L none | grep -ie \"UTF-8\\|ASCII\" -q && echo $f || true; done | xargs wc -l",
+        "linecount": "IFS=$'\\n'; for f in `git ls-files -- '[^.]**.*'`; do enca \"$f\" -L none | grep -ie \"UTF-8\\|ASCII\" -q && echo \"$f\" || true; done | xargs wc -l",
         "showip": "ifconfig | grep \"inet \" | grep -Fv 127.0.0.1 | awk '{print $2}'",
-        "genframes": "python3 scripts/gen_random_frames.py",
         "test": "pnpm bun test --todo",
         "test:watch": "pnpm test --watch"
     },
@@ -32,6 +32,7 @@
         "typescript": "^5.6.2"
     },
     "dependencies": {
+        "@r47onfire/kaplay-gamepad-haptics": "^0.1.0",
         "kaplay": "github:dragoncoder047/kaplay#25a76d0647adffc0d87273fd78f64c747efec0ea",
         "kaplay-lighting": "github:dragoncoder047/kaplay-lighting#943a1f2e5b0f7ad5915371087d5d0928223ef35c",
         "semver": "^7.7.4",

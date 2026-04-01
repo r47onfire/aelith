@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@r47onfire/kaplay-gamepad-haptics':
+        specifier: ^0.1.0
+        version: 0.1.0(kaplay@https://codeload.github.com/dragoncoder047/kaplay/tar.gz/25a76d0647adffc0d87273fd78f64c747efec0ea)
       kaplay:
         specifier: github:dragoncoder047/kaplay#25a76d0647adffc0d87273fd78f64c747efec0ea
         version: https://codeload.github.com/dragoncoder047/kaplay/tar.gz/25a76d0647adffc0d87273fd78f64c747efec0ea
@@ -264,6 +267,12 @@ packages:
     resolution: {integrity: sha512-/d6vAmgKvkoYlsGPsRPlPmOK1slPis/F40UG02pYwypTH0wmY0smgzdFqR4YmryxFh17XrW1kITv+U99Oajk9Q==}
     cpu: [x64]
     os: [win32]
+
+  '@r47onfire/kaplay-gamepad-haptics@0.1.0':
+    resolution: {integrity: sha512-45ayu4rU4Mq52s9YPDZMGGSXZczKm1lmg/vO5BAAqNHjE/ojRBl/WYnOc3bB/uEl0BZl3SvQE6++Lbn7TA9ykQ==}
+    version: 0.1.0
+    peerDependencies:
+      kaplay: ^4000.0.0-alpha.26
 
   '@types/bun@1.3.9':
     resolution: {integrity: sha512-KQ571yULOdWJiMH+RIWIOZ7B2RXQGpL1YQrBtLIV3FqDcCu6FsbFUBwhdKUlCKUpS3PJDsHlJ1QKlpxoVR+xtw==}
@@ -649,6 +658,10 @@ snapshots:
 
   '@oven/bun-windows-x64@1.3.9':
     optional: true
+
+  '@r47onfire/kaplay-gamepad-haptics@0.1.0(kaplay@https://codeload.github.com/dragoncoder047/kaplay/tar.gz/25a76d0647adffc0d87273fd78f64c747efec0ea)':
+    dependencies:
+      kaplay: https://codeload.github.com/dragoncoder047/kaplay/tar.gz/25a76d0647adffc0d87273fd78f64c747efec0ea
 
   '@types/bun@1.3.9':
     dependencies:

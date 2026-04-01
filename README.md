@@ -1,7 +1,7 @@
 # Aelith
 
-![GitHub last commit](https://img.shields.io/github/last-commit/dragoncoder047/aelith)
-![GitHub contributors](https://img.shields.io/github/contributors-anon/dragoncoder047/aelith)
+![GitHub last commit](https://img.shields.io/github/last-commit/r47onfire/aelith)
+![GitHub contributors](https://img.shields.io/github/contributors-anon/r47onfire/aelith)
 [![Discord](https://img.shields.io/discord/1470176747822780429?logo=discord&label=Discord)](https://discord.gg/7yD8GekuDz)
 
 So you crash-landed on a dusty barren world. It would seem as though you're stuck here forever, but it turns out that this was the site of the long-abandoned Aelith, a cutting-edge research laboratory and technology manufacturer - and the Aelith's computers somehow remember you. Armed with the Aelith's latest unreleased product, a time- and space-bending tool called a vurbilizer, you spawn vurble spores that selectively rewind parts of the world, move objects through time, and reach deeper into the Aelith's disorganized labs, closets, and backrooms. With the help of NIC, a curious floating AI bot, you’ll upgrade the vurbilizer, recover spaceship components, and piece together the Aelith’s fragmented memories to uncover why you were brought back - and who you were meant to become.
@@ -19,7 +19,7 @@ So you crash-landed on a dusty barren world. It would seem as though you're stuc
 
     Note: half the time this is actually a custom build of KAPLAY, due to the fact that KAPLAY is free software and I have a fork in which I regularly fix bugs and add new features to KAPLAY itself.
 
-* The actual data, assets, and scripting is implemented using a almost certainly terrible scripting language that is entirely undocumented.
+* The actual data, assets, and scripting is implemented using Backolon, an extremely cursed scripting language that is entirely undocumented as of when I wrote this message. It is embedded as a Git submodule (rather than being added as a npm dependency) because I tend to work on both of them at the same time.
 
 ## Top-level roadmap
 

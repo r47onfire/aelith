@@ -14,6 +14,10 @@ export class GameLoader extends Store {
         this.lastModset = this.doc.getText("lastModset");
         this.preferences = this.doc.getMap("preferences");
     }
+    override async initialize() {
+        await super.initialize();
+        this.garbageCollect();
+    }
     isInitialized() {
         return this.modsets.size > 0 && this.lastModset.length > 0;
     }
@@ -22,8 +26,4 @@ export class GameLoader extends Store {
         this.modsets.set<Y.Array<Y.Map<any>>>(LATEST_NAME, new Y.Array<Y.Map<any>>());
         this.lastModset.insert(0, LATEST_NAME);
     }
-    // override async load() {
-    //     await super.load();
-    //
-    // }
 }

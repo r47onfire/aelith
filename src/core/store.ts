@@ -14,4 +14,9 @@ export abstract class Store {
     }
     protected abstract isInitialized(): boolean;
     protected abstract initToDefaults(): Promise<void>;
+    garbageCollect() {
+        const update = Y.encodeStateAsUpdateV2(this.doc, Y.encodeStateVector(this.doc));
+        (this as any).doc = new Y.Doc({ guid: this.doc.guid });
+        Y.applyUpdateV2(this.doc, update);
+    }
 }

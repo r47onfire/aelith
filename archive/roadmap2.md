@@ -1,0 +1,78 @@
+# to do -1
+
+* [ ] Change the lisp interpreter to compile to a VM bytecode state so that it can be suspended and saved in the savefile
+* [ ] Make the menu screens and stuff have 2 default fonts, one for headings and callouts, and one for general text
+* [ ] make the about screen not have hard-coded sections, and be data-driven
+    * [ ] could this work for the config menus too?
+* [ ] make looking automatically be smoothed by angle, versus instant
+* [ ] make speech bubble using sprite for customization
+* [X] make speech bubble advance logic be handled by entity rather than object to prevent a total lockup if the scene changes mid-sentence
+* [ ] implement cutscene mode on player so camera follows but input is blocked
+* [X] make tooltips in GUI be under the item permanently instead of popups that cover the item below it
+* [ ] Add arm/hands to NIC
+* [X] add "display entities" which are not tracked in the entity system but still run hooks for e.g. rendering and stuff
+    * [ ] allow these as rendering decorations in the rooms
+    * [X] make the title screen image out of this - sprite primitive + particles child, then a 3 channel animation on the sprite to match the existing waves
+    * [ ] this is how the inventory menu screen should work as well
+        * [ ] need to determine how the currently held item is rendered (does it rotate with the aim direction, does it match flip, etc)
+* [ ] add random ticks functionality
+* [ ] change motion to be using force & velocity (would make sticky platforms better)
+* [X] finish legs
+    * [ ] animate zug legs using this too
+    * [ ] give the lil cuties antennae!
+    * [ ] add "line from here to pos on other body" primitive
+* [ ] need a way for objects to continue moving through unloaded rooms by utilizing nav mesh
+    * "bully" cellular automata?
+* [ ] need to put the "continue" code in a hook api function
+* [ ] implement all of the settings stuff even if music manager is not fully implemented
+    * [ ] hook lighting stuff into settings (how to turn off lighting??)
+* [ ] fix bug with explorer headlight lighting explorer parts
+* [X] remove "doors" section from room definition as I can just use entities for that
+    * [ ] define check order when player presses action button
+        1. try item currently holding
+        2. try item looking at
+        3. try item intersecting with (like door)
+    * [ ] do this eagerly and show a hint overlay with the bound buttons
+    * [ ] need for a way to be fallback and invoke the hook and stop if the hook exists else continue
+        * [ ] something like Lisp's `(multiple-value-bind)` or similar on the startHook command
+* [ ] implement nav mesh generation from world tiles
+    * [ ] allow entities to navigate and move silently in the background when unloaded and then come to current room and be loaded
+* [ ] NEED TO GET HOOK/RENDER/ANIM INHERITANCE WORKING
+    * [ ] "super" command to run hook form "parent" prototype(s)
+* [ ] make item pick-up be like minecraft (you get close & it automatically picks up; NIC and the player can exchange grabbable items by throwing them back and forth)
+* [ ] have way to request NIC do stuff
+    * [ ] lift player up out of sinkhole if they fall in and can't climb out
+* [ ] add animations on discrete quantities (such as booleans and frame numbers)
+* [ ] "hidden" settings entries so that options for how to interact with the items won't show up until the player has the item
+* [ ] determine where to add haptic effects
+* [ ] swimming
+    * [ ] physics buoyancy effector
+* [ ] tabbed settings menu
+    * [ ] use unused spinner sfx for tab switch
+    * [ ] L1/R1 buttons to switch tabs
+* [ ] serialization of world state to JSON
+* [ ] JUICE!! (Consult Amy on this.)
+* [ ] possibly add more parkour stuff like ledge grab, wall jump, and double jump
+    * why
+    * make it configurable
+
+## to draw
+
+* separate downlight in aelith tileset into its own sprite and remove the baked glow effect (replace with an actual shader light)
+    * [X] part 1 - remove it.
+    * [ ] part 2 - add a new light entity type.
+
+* player spaceship - crashed and fixed variants
+* doors to enter / exit the Aelith
+* mainframe computer
+* 9-track tape
+* NIC's arm
+* MORE
+
+## sounds to get or make
+
+* [X] repeating drone noise for NIC movement
+* same for spaceship movement
+* [X] 3D printer done beep
+* Elevator running
+* MORE

@@ -54,9 +54,18 @@
 
 ### crash site
 
-* player lands here.
+* player lands here to start.
 * mostly flat with a few boulders, and the player's wrecked spaceship. They can poke around
   the spaceship but that's about it.
+
+* *NIC reboots* "BEEP BOOP. I am NIC, your personal assistant. ... Wait, did I just reboot?
+  Gosh, something serious just happened." *looks at crashed spaceship* "Shoot, now we're stuck.
+  Triply stuck." *looks closer* "The warp compressor is broken, so we'll never be able to fly out.
+  The hyperwave relay is broken, so I can't call a tow. And the antimatter battery is completely
+  dead, so even if the other two worked, there's not enough power to operate them." *sits down*
+  "I guess we'll never find out what Dr. E wanted of us, even if we have to get it from the jail
+  where he's at." *after a while if the player doesn't move* "I have a feeling that there's things
+  here on this planet that can be used to fix all this, but it's certainly not this rock."
 
 ### solar tank
 
@@ -73,6 +82,7 @@
 ### sinkhole w/stream
 
 * pit goes down to caves, rope back up
+* fishing here?
 
 ### aelith entrance
 
@@ -85,6 +95,7 @@
     3. using that power, the player sends movement commands to a solar satellite
     4. the radio tower will suddenly stay power on when they get the right angle (which is easy)
     5. once the Aelith is powered up they can push the entryway button and it will unlock.
+    6. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have a security override??"
 * NIC will try to connect to the hypernet using the radio tower but fail, since it's
   radio not hyperweb and the hyperwave relay is broken.
 
@@ -113,6 +124,8 @@
     3. player spores at the elevator doors on the other side of the security gate
     4. they go back to the call button and call the elevator
     5. they activate the spore & get in
+    6. "so apparently you have a security *override* to everything, but there are still security
+       *interlocks*. That is going to be a problem..."
 
 ### loading dock
 
@@ -289,8 +302,9 @@
        batteries at once)
 * sequence to obtain zug in jar (requires component #2):
     1. Player goes to boiler room and turns off the fume hood blower machine.
-    2. They get component #2 and put it in the blower
-    3. They turn on the blower in reverse which blows the remote capture point to
+    2. They get component #2 and put it in the vurbilizer, and put the vurbilizer
+       in the blower (NIC is too large to fit)
+    3. They turn on the blower in reverse which blows the vurbilizer to
        the fume hood
     4. They activate the vurbilizer, and then they can get into the fume hood
     5. They leave the fume hood by throwing component #2 out the bottom of the fume
