@@ -109,23 +109,25 @@
 ### lobby
 
 * large atrium with holographic trees
-* contains an elevator that goes down to the labs
-* security cameras watching the exits (through entryway and loading dock)
+* contains an elevator that goes down to the labs, but it is behind a
+  decontamination airlock
 * the player can only get in to the elevator using the vurbilizer found in the
   conference room
-  * the elevator can be called by pressing a button, but that also
-    closes the security gate in front of the elevator, and the call button is on the
-    wrong side of the gate
+  * the airlock doors are programmed to only be one door unlocked at once,
+    otherwise it's not an airlock.
 
-    `[exit to loading dock]---[broken elevator call button]---[elevator]----[security gate]-----[elevator call button]-----[entry doors]----[to front desk]`
+    `[elevator + call button]----[airlock door 1]-----[airlock door 2]----[airlock operation button]---[elevator call button]-----[entry doors]----[to front desk]`
 * sequence to enter elevator:
     1. player goes to conference room and gets vurbilizer.
-    2. player un-calls elevator if they called it, this opens the security gate.
-    3. player spores at the elevator doors on the other side of the security gate
-    4. they go back to the call button and call the elevator
-    5. they activate the spore & get in
-    6. "so apparently you have a security *override* to everything, but there are still security
-       *interlocks*. That is going to be a problem..."
+    2. player presses button to open first door of airlock.
+    3. playergoes into the airlock vestibule, spores while inside
+    4. they go back out to the control panel and press the airlock button,
+       locking the first door and unlocking the second and activating the
+       airlock
+    5. they activate the spore & are now on the unlocked side and are able to
+       enter the elevator.
+    6. "i find it quite strange why the put a whole airlock and decontamination
+       system at the entrance..."
 
 ### loading dock
 
