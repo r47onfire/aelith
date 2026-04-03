@@ -15,7 +15,7 @@
    |      \                        |                  /                          \
    |       [loading dock]-------[lobby]---[front desk]-----[conference room]      \
    |                               |                                               \
-   |                      .----[stock room]---[psych lab]    .-----------------.    |
+   |                      .----[stock room]---[zoology lab]  .-----------------.    |
    |                     /         |                  \     /                   \   |
    |      [engineering lab]---[machine shop]--------[bio lab]---[supply closet]  |  |
    |      /                        |        \        /       \                  /  /
@@ -47,7 +47,7 @@
 * make an antimatter battery using it in machine shop
 * get component #5 from engineering lab (requires components #1-#4 and an antimatter
   battery)
-* get components #6-#8 from psych lab (requires component #5 and partway through
+* get components #6-#8 from zoology lab (requires component #5 and partway through
   component #6)
 * put nodules in tank to get warp compressor materials (requires component #7)
 * use component #8 to unlock ed program to mash tapes
@@ -74,14 +74,15 @@
 ### solar tank
 
 * large thermal generator that zugs managed to break into and swim around in.
-* there is a breaker panel to enable the generator that must be turned on
+* roof is a lens that focuses the sun down onto the surface of the fluid inside.
+* there is a breaker panel outside to enable the generator that must be turned on
 * thermal fluid is being heated up by sun and zugs like the warmth so that's why they
   broke in
 * the thermal fluid is needed to be flooded down into the zug burrow below and through
   into the voranium flower cave
 * trying to activate a vurble spore inside of the solar tank causes it to explode and
   not work because of the heat
-* however spores can still be captured in here
+* however the vurbilizer still works and spores can still be captured in here
 
 ### sinkhole w/stream
 
@@ -98,10 +99,14 @@
     2. player goes to radio tower and cranks emergency generator.
     3. using that power, the player sends movement commands to a solar satellite
     4. the radio tower will suddenly stay power on when they get the right angle (which is easy)
-    5. once the Aelith is powered up they can push the entryway button and it will unlock.
-    6. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have a security override??"
+    5. once the Aelith is powered up they can push the door button and it will open.
+    6. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have
+       a security override??"
 * NIC will try to connect to the hypernet using the radio tower but fail, since it's
   radio not hyperweb and the hyperwave relay is broken.
+    * "Shoot, I thought we'd gotten a chance to send for help... but no, they had to build a radio tower.
+      Radio... the most reliable choice for local communications, but fat chance of it ever working to
+      connect to the hypernet..."
 
 ### radio tower/mirrors
 
@@ -135,19 +140,20 @@
 
 ### loading dock
 
-* this is "outside" and the player can exit the Aelith here but not enter.
+* this is "outside" in terms of theming and tileset.
 * large rollup doors and dock for spaceships to pick up goods
+* the doors can only be opened from the inside, so the player must enter by the front door
+  the first time.
 
 ### front desk
 
-* misc stuff, notes
+* misc stuff desk supplies, notes
 * find tape for component #2 in file cabinet
 
 ### conference room
 
 * chairs askew
 * vurbilizer is sitting prominently on table
-* player must steal projector and install it on NIC to read the tapes
 
 ### executive office
 
@@ -159,9 +165,9 @@
 ### stock room
 
 * contains 5 racks of spaceship bodywork
-* scissor lift to take person up the racks
+* arm lift robot to take person up and down the racks
 * the racks are blocked by the bodywork so you can't walk down the end through the
-  wall into the psych lab
+  wall into the zoology lab
 * when mineral nodules roll across the shelves they shove the bodywork off with a
   clatter
   * the player must retrieve the nodules from the shelf using the robot arm, there
@@ -171,12 +177,11 @@
     1. (after 2 nodules' overflow) nothing
     2. (after 4 nodules' overflow) component #6
     3. (after 8 nodules' overflow) component #7
-    4. (after 16 nodules' overflow) component #8 (this is 2 racks' worth since there
-       is no 5th bit, the 5th row is carry out)
+    4. (after 16 nodules' overflow) component #8
 
-### psych lab
+### zoology lab
 
-* for testing the brain of the zugs
+* for studying the zugs
 * put the 4 bit binary counter here
   * actuated by mineral nodules from the caves
   * the player can only move the nodules using component #5, they are too heavy
