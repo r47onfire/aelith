@@ -2,6 +2,10 @@
 
 * TODO: finish puzzle to get ed tape
 
+<!-- markdownlint-disable no-emphasis-as-heading -->
+
+*TURN TEXT WRAP OFF TO VIEW THIS MAP PROPERLY*
+
 ```text
                              [radio tower]              START
                                    |                      |
