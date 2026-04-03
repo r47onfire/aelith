@@ -116,7 +116,7 @@
   * the airlock doors are programmed to only be one door unlocked at once,
     otherwise it's not an airlock.
 
-    `[elevator + call button]----[airlock door 1]-----[airlock door 2]----[airlock operation button]---[elevator call button]-----[entry doors]----[to front desk]`
+    `[elevator + call button]----[airlock door 1]-----[airlock door 2]----[airlock operation button]---[entry doors]----[to front desk]`
 * sequence to enter elevator:
     1. player goes to conference room and gets vurbilizer.
     2. player presses button to open first door of airlock.
