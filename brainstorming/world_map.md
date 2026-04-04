@@ -294,8 +294,8 @@
 * sequence for antimatter battery fluid (requires components #1-#4):
     1. Player uses the vurbilizer to power the door lock mechanism for the supply
        closet. this lets them in.
-    2. Player goes in with them the remote probe (component #2) and leaves it in
-       there
+    2. Player goes in with them the remote probe (component #2) and leaves the vurbilizer
+       in there
     3. Player disconnects power from door latch, then triggers vurbilizer, they can
        now get in anytime using the spore
     4. Repeat steps 1-3 for chemistry lab
@@ -331,6 +331,8 @@
   will destroy it
 * the chemical supply bottles have basically an infinite supply for the purposes
   of the game
+* the supply bottles are too large to move, and the player does not have
+  component #5 yet so they can't teleport the bottle out.
 
 #### chem lab
 
@@ -405,7 +407,7 @@
 
 * humming furnace and blowers can be turned on and off by levers
 * A duct is connected to fume hood in bio lab, is only way to get into fume hood,
-  place component #2 inside, and then turn on the blower in reverse
+  place vurbilizer with component #2 inside, and then turn on the blower in reverse
 
 ### trash dump cave
 
@@ -437,6 +439,8 @@
        glassware
     7. these two components go into printer along with blueprint to make the warp
        compressor
+* TODO this puzzle needs a rework. What about it makes it so that it can't just be done
+  in the chemistry lab
 
 ### zug burrow
 
