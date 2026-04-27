@@ -14,3 +14,10 @@
 * simple things have a single action which is automatically selected when triggered (levers, elevator call buttons, placing/picking up items, opening/closing doors, activating remote vurbilizer trigger)
 
 * when the player tries to pull a lever or something that the player can't reach but NIC can, NIC will try to go and activate it themselves, but some switches are security locked and can only be switched by the player directly
+
+## vurble stuff
+
+* the vurble spores are small biological blobs of energy that slide around if the player is not holding them
+* use a softbody from kaplay once that is added
+
+* vurbilizer must be near slime mold on the walls or floor to spawn a vurble spore

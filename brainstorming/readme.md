@@ -1,4 +1,4 @@
-warning!!
+# !!warning!!
 
 this folder contains notes and AI chat transcripts that I used to ideate and develop the plot and story of Aelith. I only keep them here for my own reference (they are quite out of date and contain old ideas that don't reflect the current lore of Aelith) and to be transparent about how I used AI to help me.
 
