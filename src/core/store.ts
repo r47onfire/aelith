@@ -1,22 +1,22 @@
 import { IndexeddbPersistence } from "y-indexeddb";
 import * as Y from "yjs";
-import { Prefixes } from "../config/prefixes";
+import { Keys } from "../config/keys";
 
 export abstract class Store {
-    readonly doc: Y.Doc;
-    readonly offlineDB: IndexeddbPersistence;
+    _doc: Y.Doc;
+    _offlineDB: IndexeddbPersistence;
     constructor(public readonly storeName: string) {
-        this.offlineDB = new IndexeddbPersistence(Prefixes.ROOT_PREFIX + storeName, this.doc = new Y.Doc);
+        this._offlineDB = new IndexeddbPersistence(Keys.ROOT_PREFIX + storeName, this._doc = new Y.Doc);
     }
-    async initialize() {
-        await this.offlineDB.whenSynced;
-        if (!this.isInitialized()) await this.initToDefaults();
+    async init() {
+        await this._offlineDB.whenSynced;
+        if (!this._isInitialized()) await this._initToDefaults();
+        this._garbageCollect();
     }
-    protected abstract isInitialized(): boolean;
-    protected abstract initToDefaults(): Promise<void>;
-    garbageCollect() {
-        const update = Y.encodeStateAsUpdateV2(this.doc, Y.encodeStateVector(this.doc));
-        (this as any).doc = new Y.Doc({ guid: this.doc.guid });
-        Y.applyUpdateV2(this.doc, update);
+    protected abstract _isInitialized(): boolean;
+    protected abstract _initToDefaults(): Promise<void>;
+    protected _garbageCollect() {
+        const update = Y.encodeStateAsUpdateV2(this._doc, Y.encodeStateVector(this._doc));
+        Y.applyUpdateV2(this._doc = new Y.Doc({ guid: this._doc.guid }), update);
     }
 }

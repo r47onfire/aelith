@@ -440,7 +440,7 @@
     7. these two components go into printer along with blueprint to make the warp
        compressor
 * TODO this puzzle needs a rework. What about it makes it so that it can't just be done
-  in the chemistry lab
+  in the chemistry lab                                        
 
 ### zug burrow
 

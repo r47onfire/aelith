@@ -1,6 +1,7 @@
 import kaplayGamepadHaptics from "@r47onfire/kaplay-gamepad-haptics";
 import kaplay from "kaplay";
 import kaplayLighting from "kaplay-lighting";
+import { min } from "lib0/math";
 import { SCALE } from "../config/constants";
 import { kaplayBackground } from "./plugins/kaplay-background-more";
 import { kaplayDynamicStrings } from "./plugins/kaplay-dynamic-text";
@@ -13,7 +14,7 @@ export const K = kaplay({
     debug: true,
     crisp: true,
     global: false,
-    pixelDensity: Math.min(window.devicePixelRatio, 2),
+    pixelDensity: min(window.devicePixelRatio, 2),
     scale: SCALE,
     background: "#000000",
     touchToMouse: false,

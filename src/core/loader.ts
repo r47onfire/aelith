@@ -1,29 +1,43 @@
 import * as Y from "yjs";
-import { Prefixes } from "../config/prefixes";
+import { Keys } from "../config/keys";
 import { Store } from "./store";
+
 /**
- * Stores the data for each modset as well as preferences
+ * Stores the data for the world, the loaded mods, etc
  */
-export class GameLoader extends Store {
-    readonly modsets: Y.Map<Y.Array<Y.Map<any>>>;
-    readonly lastModset: Y.Text;
-    readonly preferences: Y.Map<any>;
+export class GameWorld extends Store {
+    readonly _mods: Y.Map<Y.Array<Y.Map<any>>>;
+    readonly _localPrefs: Y.Map<any>;
+    constructor(worldID: string) {
+        super(Keys.WORLD_PREFIX + worldID);
+        this._mods = this._doc.getMap(Keys.PER_WORLD_MODS_KEY);
+        this._localPrefs = this._doc.getMap(Keys.PER_WORLD_PREFERENCES_KEY);
+    }
+    _isInitialized() {
+        return this._localPrefs.size > 0;
+    }
+    async _initToDefaults() {
+        this._localPrefs.set("_firstLoad", false);
+    }
+}
+
+/**
+ * Stores the data for global settings and stuff, such as global preferences, mod settings, etc
+ */
+export class GlobalSettings extends Store {
+    _worlds: Y.Array<string>;
+    _preferences: Y.Map<any>;
+    _lastModset: Y.Text;
     constructor() {
-        super(Prefixes.MODSETS);
-        this.modsets = this.doc.getMap("modsets");
-        this.lastModset = this.doc.getText("lastModset");
-        this.preferences = this.doc.getMap("preferences");
+        super(Keys.GLOBAL_SETTINGS);
+        this._worlds = this._doc.getArray(Keys.GLOBAL_WORLDS_KEY);
+        this._preferences = this._doc.getMap(Keys.GLOBAL_PREFERENCES_KEY);
+        this._lastModset = this._doc.getText(Keys.GLOBAL_LAST_USED_MODS_KEY);
     }
-    override async initialize() {
-        await super.initialize();
-        this.garbageCollect();
+    _isInitialized() {
+        return this._worlds.length > 0;
     }
-    isInitialized() {
-        return this.modsets.size > 0 && this.lastModset.length > 0;
-    }
-    async initToDefaults() {
-        const LATEST_NAME = "latest";
-        this.modsets.set<Y.Array<Y.Map<any>>>(LATEST_NAME, new Y.Array<Y.Map<any>>());
-        this.lastModset.insert(0, LATEST_NAME);
+    async _initToDefaults() {
+        this._worlds.push(_create_new_world(this._doc));
     }
 }

@@ -22,7 +22,7 @@ function mash(t: number) {
 export function mashToPoint(t: number) {
     const rand1 = mash(t);
     const rand2 = mash(rand1);
-    return K.vec2(K.lerp(-1, 1, rand1), K.lerp(-1, 1, rand2));
+    return K.vec2(rand1 * 2 - 1, rand2 * 2 - 1);
 }
 
 export function mashPoint(p: Vec2) {

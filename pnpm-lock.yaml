@@ -17,6 +17,9 @@ importers:
       kaplay-lighting:
         specifier: github:dragoncoder047/kaplay-lighting#943a1f2e5b0f7ad5915371087d5d0928223ef35c
         version: https://codeload.github.com/dragoncoder047/kaplay-lighting/tar.gz/943a1f2e5b0f7ad5915371087d5d0928223ef35c
+      lib0:
+        specifier: ^0.2.117
+        version: 0.2.117
       semver:
         specifier: ^7.7.4
         version: 7.7.4
