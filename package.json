@@ -21,7 +21,7 @@
         "test": "pnpm bun test --todo",
         "test:watch": "pnpm test --watch"
     },
-    "license": "GPL-3.0-only",
+    "license": "AGPL-3.0-only",
     "devDependencies": {
         "@types/bun": "^1.3.9",
         "bun": "^1.3.9",
