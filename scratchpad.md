@@ -15,3 +15,10 @@
         * video settings
         * controls/keybinds
         * mod-provided keybinds
+
+## Will be useful later
+
+<https://jimmy.warting.se/2021/02/16/p2p-signal-with-webpush.html>
+
+* the vurble spores spawn a vurble when invoked
+* vurbles are useless but cute

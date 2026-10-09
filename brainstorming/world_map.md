@@ -24,7 +24,7 @@
    |   /       [robotics lab]      |                    .--------------------'  /
    |  |          |           \     |                   /                       /
    |  |  [server room]--------[basement]----------[boiler room]               /
-   |  |             |                                                        /
+   |  |             |                                                        /   -------------below this line is rough caves
    |   \            |                                                       /
    |    \           |                                  .-----------[zug burrow]
    |     |           \                                /
@@ -38,16 +38,17 @@
 
 * open Aelith door (no tools)
 * get into elevator (component #0 only)
-* find blueprints for components #1-#3
+* find tapes for components #1-#3
 * find projector and tape reader
 * install these in NIC to read the tapes
 * get components #1-#3 built using shop printer
+* get zug in jar for #4
 * get component #4 using physics lab press machine (requires components #2 and #3)
 * get antimatter battery fluid using chemistry (requires components #1-#4)
 * make an antimatter battery using it in machine shop
 * get component #5 from engineering lab (requires components #1-#4 and an antimatter
   battery)
-* get components #6-#8 from zoology lab (requires component #5 and partway through
+* get components #6-#8 from zoology lab (requires component #5 and then
   component #6)
 * put nodules in tank to get warp compressor materials (requires component #7)
 * use component #8 to unlock ed program to mash tapes
@@ -76,10 +77,14 @@
 * large thermal generator that zugs managed to break into and swim around in.
 * roof is a lens that focuses the sun down onto the surface of the fluid inside.
 * there is a breaker panel outside to enable the generator that must be turned on
+* there is a ladder and hatch to enter the tank (for maintenance) from the outside.
 * thermal fluid is being heated up by sun and zugs like the warmth so that's why they
   broke in
 * the thermal fluid is needed to be flooded down into the zug burrow below and through
   into the voranium flower cave
+* there is a sieve lift submerged in the tank for cleaning it that the player can operate
+  to lift the nodules up out of the thermal fluid (in order to retrieve them by pushing
+  them down the tunnel to the zug burrow) should they need them
 * trying to activate a vurble spore inside of the solar tank causes it to explode and
   not work because of the lack of surrounding slime mold energy to feed off of
 * however the vurbilizer still works and spores can still be captured in here
@@ -87,6 +92,8 @@
 ### sinkhole w/stream
 
 * pit goes down to caves, rope back up
+* all caves are accessible without unlocking doors in the Aelith (the connections from
+  the Aelith directly to the caves are trash chutes and are one-way (down, but not up))
 * fishing here?
 
 ### aelith entrance
@@ -100,7 +107,9 @@
     3. using that power, the player sends movement commands to a solar satellite
     4. the radio tower will suddenly stay power on when they get the right angle (which is easy)
     5. once the Aelith is powered up they can push the door button and it will open.
-    6. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have
+    6. the radio tower can automatically aim the satellite once it has main power turn on so it will "lock"
+       on and the player won't have to worry about it turning off unless they trip the main breaker
+    7. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have
        a security override??"
 * NIC will try to connect to the hypernet using the radio tower but fail, since it's
   radio not hyperweb and the hyperwave relay is broken.
@@ -125,17 +134,18 @@
   * the airlock doors are programmed to only be one door unlocked at once,
     otherwise it's not an airlock.
 
-    `[elevator + call button]----[airlock door 1]-----[airlock door 2]----[airlock operation button]---[entry doors]----[to front desk]`
+    `[elevator + call button]----[airlock door]-----[airlock door]----[airlock operation button]---[entry doors]----[to front desk]`
 * sequence to enter elevator:
     1. player goes to conference room and gets vurbilizer.
     2. player presses button to open first door of airlock.
-    3. playergoes into the airlock vestibule, spores while inside
+    3. player goes into the airlock vestibule, spores while inside
     4. they go back out to the control panel and press the airlock button,
        locking the first door and unlocking the second and activating the
        airlock
     5. they activate the spore & are now on the unlocked side and are able to
        enter the elevator.
-    6. "i find it quite strange why the put a whole airlock and decontamination
+    6. if they mess up, pressing the airlock button again will swap the doors back
+    7. "i find it quite strange why the put a whole airlock and decontamination
        system at the entrance..."
 
 ### loading dock
@@ -154,13 +164,15 @@
 
 * chairs askew
 * vurbilizer is sitting prominently on table
+* projector mounted on ceiling
 
 ### executive office
 
 * contains final communications from Zylox as well as a working hyperwave relay
   installed in his computer which can be used in place for lore to verify it works
   before it can be removed
-* the door lock can only be opened using component #9
+* the door lock can only be opened from the outside using component #9 (it can always
+  be opened from the inside for exit safety)
 
 ### stock room
 
@@ -200,16 +212,16 @@
     it to the end of the cage
   * when the heavy nodule reaches the end of the cage it causes the cage to tip, and
     the one in the nest rolls out, dumping both
-* sequence to get component #6, #7, and #8:
+* sequence to get tapes for component #6, #7, and #8:
     1. go to cave and bring up mineral nodules using component #5
     2. after dropping in 4 nodules (3 total because overflowed ones can be reused),
-       player gets component #6 and is able to clone them to get the 5 required to
+       player gets the tape for component #6 and is able to clone them to get the 5 required to
        overflow all of them
-    3. if player forgets to clone them and all 3 get backed up, there is a "clean"
+    3. if player forgets to clone them and all get backed up, there is a "clean"
        lever to tip all of the cages and release the nodules without triggering
        a ripple carry
-    4. component #7 does them no good here but they can get it
-    5. component #8 is needed for the last puzzle
+    4. tape for component #7 does them no good here but they can get it
+    5. tape for component #8 is needed for the last puzzle
 
 ### machine shop
 
@@ -231,32 +243,33 @@
 
 ### physics lab
 
-* gravity manipulators that can push objects and act as invisible links (enabling
-  stuff that 2D physics engines with collision layers allow but would be impossible
-  in real life 3D)
+* entrance is on the left
 * main installation is a million-pound deadweight machine (like the one at NIST) with
   a fixture to hold a zug in the crushing jaws. it extends down into a pit
+* gravity manipulators that can push objects and act as invisible links (enabling
+  stuff that 2D physics engines with collision layers allow but would be impossible
+  in real life 3D) are used to construct the deadweight machine lower platform
 * the walkway to go over to the control panel can be picked up and placed in the jaws
   of the press
-* the control panel for the machine is only accessible after crossing the removable
-  panels
-  * the player cannot jump over it due to the catwalk above it and if they jump in,
-    there is a ladder that gets them back to the entryway doors, but
-    they cannot jump back up to the controls
+* the control panel for the machine is on the right and is only accessible after
+  crossing the removable panels
+  * the player cannot jump over the panels due to a catwalk above it and if they fall in
+    the pit, there is a ladder on the left that gets them back to the entryway doors, but
+    they cannot jump back up to the controls unless the floor tiles are in place
+  * the press automatically opens when the player is not pressing the "close" button,
+    for safety
 * there is a cryocooler and helium compressor available for the player to
   jerry rig attach to the press jaws to keep the zug frozen (otherwise it would
   thaw and become uncrushable), it cannot be attached without the floor
   tiles in place
-* with the press in the raised/closed position, the jaws have been raised up too far
-  for the player to reach them.
 * the power cable to the helium compressor broke, requiring the player to plug
-  in the vurbilizer to power it
+  in the vurbilizer to power it off the vurbilizer's energy source
 * the player must go to the bio lab and get the zug from the jar in the fume
   hood, this zug has eaten the program tape for component #4.
 * activation sequence for #4:
     1. Player enters with zug in jar. gets zug out of jar and places it in the jaws
        of the press.
-    2. Player must now spore into the control panel side.
+    2. Player must now go to the control panel side and capture a spore.
     3. On the way back, they grab the floor tiles, blocking their route returning to
        the controls.
     4. They must attach the floor tiles and cryocooler to the press and power it up
@@ -266,11 +279,12 @@
     6. With the zug frozen in the press, they can crush it, causing it to explosively
        break apart, but the tape inside gets embedded in the jaws of the press due
        to the sudden snap, and the zug fragments remain around the jaws. (The fragments
-       will be important in crafting the warp compressor.)
+       will be important in crafting the warp compressor.) They can exit the control
+       balcony by jumping into the pit and climbing up the ladder on the left.
     7. They must now go to the machine shop and get a wrench to jam in the press and
        dislodge the tape. The cryocooler must remain on at this point.
     8. If they no longer have a spore to get back to the controls (because it wasn't
-       done with component #3 and died the first time), they must turn off the
+       done with component #3 enabled and died the first time), they must turn off the
        cryocooler to get their vurbilizer back, and this allows the zug fragments
        to thaw and recombine around the tape, and the player has to get the walkway
        pieces to be able to get back to the controls, and back to the step 2.
@@ -281,29 +295,30 @@
 
 * no lightswitch on wall, lights are permanently on
 * contains a fume hood and chemical storage cabinets
-* plus a zug floating in a jar of liquid inside the fume hood
+* plus a zug floating in a jar of volatile/toxic preservation liquid inside the fume hood
 * terrarium with some voranium flowers growing in it (can be opened to take them; they do
   NOT respawn here, only in the voranium flower cave below)
 * the zug ate the tape for component #4, but the player must first freeze and then
   crack open the zug in the physics lab to get it
 * the player can only get into the fume hood via the ductwork from the boiler room to
-  be able to grab the jar
+  be able to grab the jar since the fume hood is jammed down by a misplaced ring stand
 * cabinet contains tape for component #3
-* the supply closet and chem lab doors can only be opened by powering the lock
+* the supply closet and chem lab doors can only be opened from the outside by powering the lock
   with the vurbilizer's battery, thus forcing the player to do without it while
   they're in there; the power injection point is too far from the doors for the
   player to be able to grab the vurbilizer while standing in the doorway
-* the doors for the labs can always be opened from the inside (for safety)
+* the doors for the chem lab and supply closet can always be opened from the inside (for safety)
 * sequence for antimatter battery fluid (requires components #1-#4):
     1. Player uses the vurbilizer to power the door lock mechanism for the supply
        closet. this lets them in.
-    2. Player goes in with them the remote probe (component #2) and leaves the vurbilizer
-       in there
-    3. Player disconnects power from door latch, then triggers vurbilizer, they can
-       now get in anytime using the spore
+    2. Player goes in with them the remote probe beacon (component #2) and leaves the
+       beacon in there
+    3. Player exits to bio lab, disconnects power from door latch, then triggers vurbilizer,
+       they can now get in anytime using the spore
     4. Repeat steps 1-3 for chemistry lab
     5. These must be done with components #3 and #4 on otherwise the player will be
-       forced to enter the bio lab and if they take the chemicals they will spoil.
+       forced to enter the bio lab later and if they take the chemicals in the light they
+       will spoil.
     6. Once the player can use spores to teleport back and forth between the supply
        closet and chemistry lab without passing through the bio lab, they can take
        the vurbilizer and no longer need to power the door latch mechanisms.
@@ -316,13 +331,13 @@
        batteries at once)
 * sequence to obtain zug in jar (requires component #2):
     1. Player goes to boiler room and turns off the fume hood blower machine.
-    2. They get component #2 and put it in the vurbilizer, and put the vurbilizer
-       in the blower (NIC is too large to fit)
+    2. They get component #2 from front desk cabinet and put it in the vurbilizer,
+       and put the vurbilizer in the blower (NIC is too large to fit)
     3. They turn on the blower in reverse which blows the vurbilizer to
        the fume hood
-    4. They activate the vurbilizer, and then they can get into the fume hood
-    5. They leave the fume hood by throwing component #2 out the bottom of the fume
-       hood (it fits, but the zug in jar doesn't)
+    4. They activate the vurbilizer to get a vurble spore to the fume hood and then
+       immediately use it, teleporting them there
+    5. They remove the ring stand and open the fume hood and exit
 
 #### supply closet
 
@@ -362,7 +377,7 @@
   then reenter
 * once installed the antimatter battery cannot be removed (this forces the player to
   make a 2nd one for their spaceship)
-* component #5 is stored on a high shelf
+* tape for component #5 is stored on a high shelf
 * player must plug in antimatter battery and control gantry crane to knock it down.
 
 ### robotics lab
@@ -377,20 +392,15 @@
 * sequence to get ed tape (requires component #8):
     1. ???????????????????????????????                   
 
-### hallway
-
-* landing for elevator 2
-* nothing else here
-
 ### basement
 
-* landing for elevator 2
+* landing for elevator
 * nothing else here
 
 ### server room
 
-* dimly lit, glowing blobs hanging off of racks, short ceiling
-* at least three 9-track tape readers here
+* dimly lit/decaying, glowing blobs hanging off of racks, short ceiling
+* at least four 9-track tape readers here
 * player must get tools from workshop and take apart a tape reader and install
   it on NIC along with the projector to be able to read the tapes
 * contains computer terminal that can be used to splice tapes
@@ -432,7 +442,7 @@
 * the player must harvest some of these for each component to be made
 * sequence to obtain purified voranium (requires component #7):
     1. player captures spore inside solar tank with #7 active.
-    2. comes back here and drops nodules on to spore which teleports them into the
+    2. comes back to here and drops nodules onto spore which teleports them into the
        solar tank
     3. if the player needs more nodules they can clone more with component #6
     4. when the tank overflows the fluid rushes down into the burrow and then to
@@ -446,8 +456,8 @@
     7. these two components go into printer along with blueprint to make the warp
        compressor
 * there is also a lookalike animal here that is carnivorous and eats vurble spores
-    * the player must be stealthy while holding one in here (by sneaking) or this animal
-      will grab the spore out of the player's hand and destroy it without invoking it
+    * the player must be stealthy while handling one in here (by sneaking) or this animal
+      will notice motion, wake up, and eat the spore
 
 ### zug burrow
 

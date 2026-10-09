@@ -2,30 +2,36 @@
 
 ## Gameplay
 
-*Aelith* is a 2D side-scrolling Metroidvania. The player controls a silent and nameless robotic alien protagonist who crash-lands on a lifeless planet and explores an abandoned datacenter and research outpost called the Aelith, in search of parts to repair their broken spaceship. Along their way they are accompanied by a floating AI robot companion named NIC, who provides commentary and comic relief throughout the game.
+*Aelith* is a 2D side-scrolling Metroidvania. The player controls a silent and nameless robotic alien protagonist who crash-lands on a desert planet and explores an abandoned datacenter and research outpost called the Aelith, in search of parts to repair their broken spaceship. Along their way they are accompanied by a floating AI robot companion named NIC, who provides commentary and comic relief throughout the game.
 
 Within the Aelith, the player finds a tool called a "vurbilizer" that allows them to spawn "vurble spores" at will. Once spawned, a vurble spore is able to teleport the player on command back to the point where it was spawned, as well as cause interactable items such as doors to return to the same state (closed or open) they were in when the spore was captured. Crucially, the spores do not affect anything else linked when they revert the state of an object. By strategically spawning vurble spores that will restore the state of some objects in a linked group but not others, the player can bypass the security interlocks still present on doors inside the Aelith and access server rooms, research labs, and offices.
 
-In order to upgrade the vurbilizer, the player must collect data files (in the form of 9-track tape spools scattered around) and insert them into a tape reader, which reads the tape and presents its contents to the player. Some (but not all) of the tapes contain short programs which the player can send to a bank of 3D printers which transform the program into a physical component the player can install in their vurbilizer, allowing it to create more powerful vurble spores. The program tapes and the non-program tapes each contain comments, notes, and plans from the people that once staffed and managed the Aelith, that provide information to the player about the Aelith's purpose, growth, and ultimate downfall.
+In order to upgrade the vurbilizer, the player must collect data files (in the form of 9-track tape spools scattered around) and give them to NIC (after upgrading NIC to be able to read them), who reads the tape and presents its contents to the player. Some (but not all) of the tapes contain short programs which the player can send to a bank of 3D printers which transform the program into a physical component the player can install in their vurbilizer, allowing it to create more powerful vurble spores. The program tapes and the non-program tapes each contain comments, notes, and plans from the people that once staffed and managed the Aelith, that provide information to the player about the Aelith's purpose, growth, and ultimate downfall.
 
 ### Vurbilizer
 
 The vurbilizer is a tool that allows the player to manipulate time and space (but mostly time). When the player uses the vurbilizer, it summons a vurble spore containing an internal memory of the state of the environment around it when it was spawned. Using the vurble spore causes it to restore the state of the world, but only the particular bits of state that were initially saved. The vurbilizer feeds off of energy concentrated by the slime mold growing around and within the planet, so it must be near some of this slime to work.
 
+The vurble spores still have an entanglement tie with the vurbilizer itself, so further spore captures may still affect the viability of a spore, but will not affect what it can do.
+
+The vurbilizer has an internal power source that can be diverted to power something else in the world temporarily; the vurbilizer itself can't be activated while the power is connected elsewhere.
+
 The vurbilizer contains a number of "component slots" that the player can install "component" programs into which are able to modify what gets saved in the captured vurble spore. These components can't actually be found physically, but the player can find programs that describe them and then take those tapes to a computer that is hooked up to a 3D printer which then prints the component (NIC will help them the first time).
 
 The components that can be found are, in order of appearance:
 
-0. With no components, the vurbilizer cannot save anything other than the player's position, and the spore can only teleport them back. The vurbilizer also only has one bit of memory, so that capturing a 2nd vurble spore renders the first one useless (using it will do nothing other than spray particles everywhere and make a horrible sound effect).
+0. With no components, the vurbilizer cannot save anything other than the player's position, and the spore can only teleport them back. The vurbilizer also only has one slot of memory, so that capturing a 2nd vurble spore clears the entanglement of the first one and renders it useless (using it will do nothing other than spray particles everywhere and make a horrible sound effect).
 1. A component that allows the vurbilizer to save the state of machines within a short configurable distance of the usage point, and restores the state of those machines but not restoring anything else linked to them if it wasn't also captured, so that security interlocks can be broken in order to bypass them.
-2. A component that allows the vurbilizer to be activated remotely and teleport the captured spore back to the player, while still having the vurbilizer use its own position as the capture origin, allowing the player to get a vurble spore for a location they can't physically get to.
+2. A component that allows the vurbilizer to be activated remotely and teleport the captured spore back to the player, while still having the vurbilizer use its own position as the capture origin, allowing the player to get a vurble spore for a location they can't physically get to. This is a little "beacon" that is separate from the vurbilizer; the beacon only sets the capture position, the player still needs to be holding the vurbilizer itself to be able to activate it.
 3. A life-support component that prevents the vurble spore from destroying itself the first time it is used.
-4. An expanded memory card for the vurbilizer, allowing it to remember an unlimited number of spores, so that two working vurble spores can exist simultaneously.
-5. A component that changes the vurble spores so instead of teleporting the player back to where they were when it was captured, it instead leaves the player in place and teleports all the captured movable objects to the same relative offset as they were when the vurble spore was captured, allowing the player to move large items or sneak things past security systems.
+4. An expanded storage area for the vurbilizer, allowing it to remember an unlimited number of spores, so that two working vurble spores can exist simultaneously.
+5. A component that changes the vurble spores so instead of teleporting the player back to where they were when it was captured, it instead leaves the player in place and teleports all the captured movable objects to the same relative offset from the player as they were when the vurble spore was captured, allowing the player to move large items or sneak things past security systems.
 6. A component that lets the spores clone objects that are out of range.
 7. A component that makes the spore *not* remember who captured the vurble spore, so instead of teleporting the entity that created the vurble spore, it teleports the entity who triggers it.
 8. A component that allows the player to use the vurbilizer to select exactly which objects should be captured, instead of just those within a radius.
 9. A component that injects noise into the spore's data so that when it is triggered it restores boolean states to the opposite of what they were when the spore was created.
+
+The active components are used to capture the vurble spore and further changing of the components doesn't affect the abilities of vurble spores captured in the past. Components can be removed/disabled/made inactive later after capturing a vurble spore.
 
 ## Plot
 
