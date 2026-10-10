@@ -49,7 +49,7 @@
 * get components #6-#8 from zoology lab (requires component #5 and then
   component #6)
 * put nodules in tank to get warp compressor materials (requires component #7)
-* use component #8 to grab reversed tape of #9
+* use component #8 to grab mutated tape from experiment robot
 * reverse the tape to make the tape for component #9
 * open locked door to Zylox's office and obtain the hyperwave relay (requires
   component #9)
@@ -157,7 +157,7 @@
 ### front desk
 
 * misc stuff desk supplies, notes
-* find tape for component #2 in file cabinet
+* find tape for component #1 in file cabinet
 
 ### conference room
 
@@ -381,7 +381,7 @@
   the trash chute, go to the caves, back up to the solar tank, and reset the breaker,
   then reenter
 * once installed the antimatter battery cannot be removed (this forces the player to
-  make a 2nd one for their spaceship)
+  make a 2nd one for their spaceship or clone it with component #6 when available)
 * tape for component #5 is stored on a high shelf
 * player must plug in antimatter battery and control gantry crane to knock it down.
 
@@ -398,8 +398,9 @@
     * the robot can trigger them but the containment cage keeps their extent inside the cage
     * there are levers on the wall that do nothing; the robot flips them to check if the vurble
       spore has changed them
-    * the vurble spores created by the robot do literally nothing because their quantum state
-      is completely backwards from the goal, but NIC doesn't know that
+    * the vurble spores created by the robot always restore state 1:1 nonreversed because it
+      was seeded from tape #1. the true solution requires reversing the tape, but the robot
+      can't do that
     * nothing changes because the robot has hit a false peak and is unable to gradient-climb
       out to the true peak
   * the robot is performing an experiment attempting to create component #9 (it never
@@ -445,11 +446,12 @@
 ### server room
 
 * dimly lit/decaying, glowing blobs hanging off of racks, short ceiling
-* at least three 9-track tape readers here
+* at least three 9-track tape readers here with built-in controls to copy and restore
+  (error correction) a tape
 * player must get tools from workshop and take apart a tape reader and install
   it on NIC along with the projector to be able to read the tapes and convert them
   to the 3D printer format
-* contains computer terminal that can be used to splice and reverse tapes
+* contains computer terminal that does nothing other than look cool
 
 ### boiler room
 
@@ -466,7 +468,7 @@
 
 ### waterfall cave
 
-* contains tape for component #1
+* contains tape for component #2
 
 ### voranium flower cave
 
