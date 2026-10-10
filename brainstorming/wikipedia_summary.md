@@ -14,7 +14,7 @@ The vurbilizer is a tool that allows the player to manipulate time and space (bu
 
 The vurble spores still have an entanglement tie with the vurbilizer itself, so further spore captures may still affect the viability of a spore, but will not affect what it can do.
 
-The vurbilizer has an internal power source that can be diverted to power something else in the world temporarily; the vurbilizer itself can't be activated while the power is connected elsewhere.
+The vurbilizer has an internal power source that can be diverted to power something else in the world temporarily; the vurbilizer itself can't be activated to capture a new spore while the power is connected elsewhere.
 
 The vurbilizer contains a number of "component slots" that the player can install "component" programs into which are able to modify what gets saved in the captured vurble spore. These components can't actually be found physically, but the player can find programs that describe them and then take those tapes to a computer that is hooked up to a 3D printer which then prints the component (NIC will help them the first time).
 
@@ -26,7 +26,7 @@ The components that can be found are, in order of appearance:
 3. A life-support component that prevents the vurble spore from destroying itself the first time it is used.
 4. An expanded storage area for the vurbilizer, allowing it to remember an unlimited number of spores, so that two working vurble spores can exist simultaneously.
 5. A component that changes the vurble spores so instead of teleporting the player back to where they were when it was captured, it instead leaves the player in place and teleports all the captured movable objects to the same relative offset from the player as they were when the vurble spore was captured, allowing the player to move large items or sneak things past security systems.
-6. A component that lets the spores clone objects that are out of range.
+6. A component that lets the spores clone objects that are out of range. It does NOT clone any hidden fine-structure or state, so it can't be used to clone living things (vurble spores, zugs) or data on tapes (the clones are all blank).
 7. A component that makes the spore *not* remember who captured the vurble spore, so instead of teleporting the entity that created the vurble spore, it teleports the entity who triggers it.
 8. A component that allows the player to use the vurbilizer to select exactly which objects should be captured, instead of just those within a radius.
 9. A component that injects noise into the spore's data so that when it is triggered it restores boolean states to the opposite of what they were when the spore was created.

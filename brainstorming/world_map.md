@@ -1,7 +1,5 @@
 ## World map
 
-* TODO: finish puzzle to get ed tape
-
 <!-- markdownlint-disable no-emphasis-as-heading -->
 
 *TURN TEXT WRAP OFF TO VIEW THIS MAP PROPERLY*
@@ -51,7 +49,7 @@
 * get components #6-#8 from zoology lab (requires component #5 and then
   component #6)
 * put nodules in tank to get warp compressor materials (requires component #7)
-* use component #8 to unlock ed program to mash tapes
+* use component #8 to grab mutation program to mash tapes
 * mash tapes together to create tape for component #9
 * open locked door to Zylox's office and obtain the hyperwave relay (requires
   component #9)
@@ -75,7 +73,8 @@
 ### solar tank
 
 * large thermal generator that zugs managed to break into and swim around in.
-* roof is a lens that focuses the sun down onto the surface of the fluid inside.
+* roof is a lens that focuses the concentrated sun down onto the surface of the fluid
+  inside (the satellite is required to get enough sun).
 * there is a breaker panel outside to enable the generator that must be turned on
 * there is a ladder and hatch to enter the tank (for maintenance) from the outside.
 * thermal fluid is being heated up by sun and zugs like the warmth so that's why they
@@ -100,16 +99,16 @@
 
 * large towering monlith with blast door locked by powered-down keypad
 * landing pads nearby
-* player must climb radio tower and turn mirrors to direct sunlight to the solar tank
+* player must climb radio tower and command the satellite to direct sunlight to the solar tank
 * sequence to get in:
     1. player goes to solar tank and turns on breaker.
     2. player goes to radio tower and cranks emergency generator.
     3. using that power, the player sends movement commands to a solar satellite
-    4. the radio tower will suddenly stay power on when they get the right angle (which is easy)
+    4. the radio tower will suddenly stay power on when they get the right angle (the tower can
+       automatically aim the satellite once it has main power turn on so it will "lock" on and
+       the player won't have to worry about it turning off unless they trip the main breaker)
     5. once the Aelith is powered up they can push the door button and it will open.
-    6. the radio tower can automatically aim the satellite once it has main power turn on so it will "lock"
-       on and the player won't have to worry about it turning off unless they trip the main breaker
-    7. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have
+    6. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have
        a security override??"
 * NIC will try to connect to the hypernet using the radio tower but fail, since it's
   radio not hyperweb and the hyperwave relay is broken.
@@ -182,9 +181,9 @@
   wall into the zoology lab
 * when mineral nodules roll across the shelves they shove the bodywork off with a
   clatter
-  * the player must retrieve the nodules from the shelf using the robot arm, there
-    is enough friction for them to push all of the stuff off the shelf but not fall
-    off themselves
+  * the player must retrieve the nodules from the shelf by riding the robot arm up to
+    the end of the shelf; the nodules are stopped from falling off by a lip on the
+    upper shelf
   * rack contents:
     1. (after 2 nodules' overflow) nothing
     2. (after 4 nodules' overflow) component #6
@@ -248,7 +247,7 @@
   a fixture to hold a zug in the crushing jaws. it extends down into a pit
 * gravity manipulators that can push objects and act as invisible links (enabling
   stuff that 2D physics engines with collision layers allow but would be impossible
-  in real life 3D) are used to construct the deadweight machine lower platform
+  in real life 3D) are used to lift the deadweight machine lower platform
 * the walkway to go over to the control panel can be picked up and placed in the jaws
   of the press
 * the control panel for the machine is on the right and is only accessible after
@@ -288,14 +287,17 @@
        cryocooler to get their vurbilizer back, and this allows the zug fragments
        to thaw and recombine around the tape, and the player has to get the walkway
        pieces to be able to get back to the controls, and back to the step 2.
-    9. If the player successfully gets the wrench in on the frozen, crushed zug, the
-       tape will pop out and fall down the press pit where they can grab it
+    9. If the player successfully gets the wrench in on the frozen, crushed zug, and
+       closes the press again, the tape will pop out and fall down the press pit where
+       they can grab it. If they lost the spore then just back up to step 2 like the
+       other thing
 
 ### bio lab
 
 * no lightswitch on wall, lights are permanently on
-* contains a fume hood and chemical storage cabinets
-* plus a zug floating in a jar of volatile/toxic preservation liquid inside the fume hood
+* contains a fume hood and chemical storage cabinets (that contain only glassware)
+* plus a zug floating in a jar of thermal fluid inside the fume hood (the thermal
+  fluid is toxic and thus requires the fume hood to be closed)
 * terrarium with some voranium flowers growing in it (can be opened to take them; they do
   NOT respawn here, only in the voranium flower cave below)
 * the zug ate the tape for component #4, but the player must first freeze and then
@@ -322,18 +324,21 @@
     6. Once the player can use spores to teleport back and forth between the supply
        closet and chemistry lab without passing through the bio lab, they can take
        the vurbilizer and no longer need to power the door latch mechanisms.
-    7. In the chemistry lab, the lights are always on because of the toggle issues,
+    7. The chemistry lab has a stir bar plate that must be running the entire time the
+       reaction is going; otherwise the reaction spoils. The stir bar plate must be powered
+       by the vurbilizer.
+    8. In the chemistry lab, the lights are always on because of the toggle issues,
        so the player will need to use component #1 to capture one and not the other
        to be able to reset them to the same state and turn the lights off.
-    8. Once the player can darken the chemistry lab, they can go back and forth
+    9. Once the player can darken the chemistry lab, they can go back and forth
        between the closet and the lab to bring the chemicals and do the reaction,
        and at the end they have the antimatter battery fluid. (It makes enough for 8
        batteries at once)
 * sequence to obtain zug in jar (requires component #2):
     1. Player goes to boiler room and turns off the fume hood blower machine.
-    2. They get component #2 from front desk cabinet and put it in the vurbilizer,
-       and put the vurbilizer in the blower (NIC is too large to fit)
-    3. They turn on the blower in reverse which blows the vurbilizer to
+    2. They get component #2 from front desk cabinet and put activate it,
+       and put the beacon in the blower (NIC is too large to fit)
+    3. They turn on the blower in reverse which blows the beacon to
        the fume hood
     4. They activate the vurbilizer to get a vurble spore to the fume hood and then
        immediately use it, teleporting them there
@@ -383,14 +388,37 @@
 ### robotics lab
 
 * contains blueprints for the Lith Agent
-  * optional: allow the player to make a copy of NIC, and install component #2 in
-    it, allowing them to remote-control that Agent.
-    * TODO: where would this be useful
-* contains large 6DoF robot arm inside safety cage
-  * surrounded by ????????????????????????             
-* contains ed tape
-* sequence to get ed tape (requires component #8):
-    1. ???????????????????????????????                   
+* contains large 6DoF robot arm inside safety cage performing an infinite experiment
+  optimization loop
+  * the E-stop is inside the cage
+  * there is a results chute that the robot passes over but does not drop stuff in
+    * this chute is sloped downwards so that attempting to throw the #2 beacon in
+      results in the beacon just sliding back out
+  * the robot's loop is:
+    * perform some experiment ????????????????????????????            
+    * the experiment rig writes the results to a tape
+    * the robot takes the tape and moves it to a reader which analyzes it and
+      figures out what to do next
+    * the robot then performs the next step and returns the tape to the apparatus
+      to collect the data for the next round
+* sequence to get the mutation tape (requires component #8):
+    1. the player must construct another Lith Agent and another copy of component
+       #2 and put them together and they get a remote controlled non-autonomous copy
+       of the Lith Agent
+    2. they switch to controlling that and go up the results chute and hit the E-stop
+       on the robot while the claw is open
+    3. they switch back to controlling the Explorer and use component #8 to capture
+       *only* the claw of the robot - using #1 would capture the position of the arm and tape
+       as well
+    4. they restart the robot
+    5. they wait until it's holding the tape and it's passing over the results chute,
+       and then activate the vurble spore, which forces the claw to open and dump the tape
+       into the results chute
+    6. the tape spool itself doesn't fit through the chute, but NIC can then grab the end of
+       the actual tape and wind it onto a new spool
+
+TODO: why can't NIC just do the thing themselves, why does the player need the remote
+controlled copy
 
 ### basement
 
@@ -431,7 +459,7 @@
 
 ### waterfall cave
 
-* contains blueprint for component #1
+* contains tape for component #1
 
 ### voranium flower cave
 
@@ -445,7 +473,7 @@
     2. comes back to here and drops nodules onto spore which teleports them into the
        solar tank
     3. if the player needs more nodules they can clone more with component #6
-    4. when the tank overflows the fluid rushes down into the burrow and then to
+    4. the fluid displaced by the nodules flows down into the burrow and then to
        the voranium flower cave which boils the voranium flowers and once they're boiled
        touching the base of them causes them to shatter and release purified voranium
        (must be done here instead of chemistry lab since it requires the living biology of
@@ -455,6 +483,8 @@
        glassware
     7. these two components go into printer along with blueprint to make the warp
        compressor
+* the zugs drink the thermal fluid and then pee in the tank so the fluid will eventually
+  make its way back up to the tank
 * there is also a lookalike animal here that is carnivorous and eats vurble spores
     * the player must be stealthy while handling one in here (by sneaking) or this animal
       will notice motion, wake up, and eat the spore
