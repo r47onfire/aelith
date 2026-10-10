@@ -49,8 +49,8 @@
 * get components #6-#8 from zoology lab (requires component #5 and then
   component #6)
 * put nodules in tank to get warp compressor materials (requires component #7)
-* use component #8 to grab mutation program to mash tapes
-* mash tapes together to create tape for component #9
+* use component #8 to grab reversed tape of #9
+* reverse the tape to make the tape for component #9
 * open locked door to Zylox's office and obtain the hyperwave relay (requires
   component #9)
 * fix spaceship & leave
@@ -394,19 +394,30 @@
   * there is a results chute that the robot passes over but does not drop stuff in
     * this chute is sloped downwards so that attempting to throw the #2 beacon in
       results in the beacon just sliding back out
-  * the robot's loop is:
-    * perform some experiment ????????????????????????????            
+  * the experimental rig has the bits and pieces of prototype vurbilizers attached to it
+    * the robot can trigger them but the containment cage keeps their extent inside the cage
+    * there are levers on the wall that do nothing; the robot flips them to check if the vurble
+      spore has changed them
+    * the vurble spores created by the robot do literally nothing because their quantum state
+      is completely backwards from the goal, but NIC doesn't know that
+    * nothing changes because the robot has hit a false peak and is unable to gradient-climb
+      out to the true peak
+  * the robot is performing an experiment attempting to create component #9 (it never
+    succeeds as the true solution is to physically reverse the entire tape of what it
+    has so far)
     * the experiment rig writes the results to a tape
     * the robot takes the tape and moves it to a reader which analyzes it and
-      figures out what to do next
+      figures out what to do next - which is to tweak the vurbilizer prototype usually
     * the robot then performs the next step and returns the tape to the apparatus
       to collect the data for the next round
-* sequence to get the mutation tape (requires component #8):
+* sequence to get component #9 (requires component #8):
     1. the player must construct another Lith Agent and another copy of component
        #2 and put them together and they get a remote controlled non-autonomous copy
-       of the Lith Agent
+       of the Lith Agent to be able to enter the robot safety cage (NIC refuses to go
+       in because he doesn't want to get reset by the quantum field inside the cage)
     2. they switch to controlling that and go up the results chute and hit the E-stop
-       on the robot while the claw is open
+       on the robot while the claw is open. The Lith Agent clone is not needed past this and
+       the player can do whatever with it.
     3. they switch back to controlling the Explorer and use component #8 to capture
        *only* the claw of the robot - using #1 would capture the position of the arm and tape
        as well
@@ -415,10 +426,16 @@
        and then activate the vurble spore, which forces the claw to open and dump the tape
        into the results chute
     6. the tape spool itself doesn't fit through the chute, but NIC can then grab the end of
-       the actual tape and wind it onto a new spool
-
-TODO: why can't NIC just do the thing themselves, why does the player need the remote
-controlled copy
+       the actual tape and wind it onto a new spool when it hits the chute; if NIC whiffs or
+       drops it the player can take control of the Lith Agent clone, go back in, and pick it up
+       themselves (since the tape is no longer in the grip of the robot and the robot has no clue
+       where the tape went, it just knows it dropped it)
+    7. they take the tape to the server room and load it in one of the readers
+    8. they load a blank in the other reader
+    9. one of the two (but not both) must have been put in backwards
+    10. the player hits "repair" and then "copy" and the tape is copied, but since one tape
+        is backwards it gets reversed as well
+    11. this reversed tape is the tape for component #9
 
 ### basement
 
@@ -428,13 +445,11 @@ controlled copy
 ### server room
 
 * dimly lit/decaying, glowing blobs hanging off of racks, short ceiling
-* at least four 9-track tape readers here
+* at least three 9-track tape readers here
 * player must get tools from workshop and take apart a tape reader and install
-  it on NIC along with the projector to be able to read the tapes
-* contains computer terminal that can be used to splice tapes
-* sequence to get component #9 (requires mutation tape):
-    1. player goes to server room
-    2. ??????????????????                                  
+  it on NIC along with the projector to be able to read the tapes and convert them
+  to the 3D printer format
+* contains computer terminal that can be used to splice and reverse tapes
 
 ### boiler room
 
