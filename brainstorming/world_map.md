@@ -432,17 +432,9 @@ controlled copy
 * player must get tools from workshop and take apart a tape reader and install
   it on NIC along with the projector to be able to read the tapes
 * contains computer terminal that can be used to splice tapes
-* sequence to get component #9 (requires ed tape):
+* sequence to get component #9 (requires mutation tape):
     1. player goes to server room
-    2. player loads ed tape onto tape reader 1
-    3. player loads any other program data tape into drive 2
-    4. player loads blank tape into drive 3
-    5. player runs program
-    6. computer starts writing, while it's writing the player must unplug
-       the computer to corrupt it (the write takes 2 minutes so they have plenty of
-       time)
-    7. repeat a few times with traded off tapes
-    8. after enough mutations and splicing the player has a tape for component #9
+    2. ??????????????????                                  
 
 ### boiler room
 
