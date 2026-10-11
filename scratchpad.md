@@ -52,7 +52,7 @@ sorta be a mix between Minecraft and Warframe?
 * needed actions:
     * TODO
 
-## vurble stuff
+## random vurble juice (purely visual)
 
 * the vurble spores are small biological blobs of energy that squish around if the player is not holding them
 * use a softbody from kaplay once that is added
@@ -63,6 +63,7 @@ sorta be a mix between Minecraft and Warframe?
 
 * the vurble spores spawn a vurble when invoked
 * vurbles are useless but cute
+* vurbles despawn after a while if they're not interacted with
 
 ## Screens
 

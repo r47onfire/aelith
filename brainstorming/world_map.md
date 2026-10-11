@@ -385,7 +385,7 @@
   the trash chute, go to the caves, back up to the solar tank, and reset the breaker,
   then reenter
 * once installed the antimatter battery cannot be removed (this forces the player to
-  make a 2nd one for their spaceship or clone it with component #6 when available)
+  make a 2nd one for their spaceship
 * tape for component #5 is stored on a high shelf
 * player must plug in antimatter battery and control gantry crane to knock it down.
 
@@ -482,7 +482,7 @@
 * the player can harvest them and they regrow, doing that gets raw voranium mass
 * the player must harvest some of these for each component to be made
 * sequence to obtain purified voranium (requires component #7):
-    1. player captures spore with #2, #5, and #7 active.
+    1. player captures spore with #2 and #7 active.
     2. leaves #2 beacon in solar tank, then comes back to here and drops nodules onto
        spore which teleports them into the solar tank
     3. if the player needs more nodules they can clone more with component #6
