@@ -86,7 +86,7 @@
   them down the tunnel to the zug burrow) should they need them
 * trying to activate a vurble spore inside of the solar tank causes it to explode and
   not work because of the lack of surrounding slime mold energy to feed off of
-* however the vurbilizer still works and spores can still be captured in here
+* the vurbilizer also does not work
 
 ### sinkhole w/stream
 
@@ -183,12 +183,12 @@
   clatter
   * the player must retrieve the nodules from the shelf by riding the robot arm up to
     the end of the shelf; the nodules are stopped from falling off by a lip on the
-    upper shelf
+    shelf above
   * rack contents:
     1. (after 2 nodules' overflow) nothing
     2. (after 4 nodules' overflow) component #6
     3. (after 8 nodules' overflow) component #7
-    4. (after 16 nodules' overflow) component #8
+    4. (after 16 nodules' overflow) component #8 either on rack 4 or 5 (carry out) since they both trigger at the same time
 
 ### zoology lab
 
@@ -210,7 +210,8 @@
   * when the 2nd nodule comes in, the zug gets distracted and runs at it, pushing
     it to the end of the cage
   * when the heavy nodule reaches the end of the cage it causes the cage to tip, and
-    the one in the nest rolls out, dumping both
+    the one in the nest rolls out, dumping both (one through the hole in the wall to the stockroom
+    shelf, the other to the next cage)
 * sequence to get tapes for component #6, #7, and #8:
     1. go to cave and bring up mineral nodules using component #5
     2. after dropping in 4 nodules (3 total because overflowed ones can be reused),
@@ -218,7 +219,8 @@
        overflow all of them
     3. if player forgets to clone them and all get backed up, there is a "clean"
        lever to tip all of the cages and release the nodules without triggering
-       a ripple carry
+       a ripple carry (this does not magically put the tapes and stuff back in the stock
+       room though; once the player has those the clean lever does not affect them)
     4. tape for component #7 does them no good here but they can get it
     5. tape for component #8 is needed for the last puzzle
 
@@ -247,7 +249,7 @@
   a fixture to hold a zug in the crushing jaws. it extends down into a pit
 * gravity manipulators that can push objects and act as invisible links (enabling
   stuff that 2D physics engines with collision layers allow but would be impossible
-  in real life 3D) are used to lift the deadweight machine lower platform
+  in real life 3D) are the lift mechanism for the deadweight machine lower platform
 * the walkway to go over to the control panel can be picked up and placed in the jaws
   of the press
 * the control panel for the machine is on the right and is only accessible after
@@ -274,7 +276,7 @@
     4. They must attach the floor tiles and cryocooler to the press and power it up
        using the vurbilizer.
     5. They must return to the controls using the spore. If they do not have a spore
-       they can just disassemble it and back to the step 2.
+       they can just reverse their steps up to step 2.
     6. With the zug frozen in the press, they can crush it, causing it to explosively
        break apart, but the tape inside gets embedded in the jaws of the press due
        to the sudden snap, and the zug fragments remain around the jaws. (The fragments
@@ -289,8 +291,8 @@
        pieces to be able to get back to the controls, and back to the step 2.
     9. If the player successfully gets the wrench in on the frozen, crushed zug, and
        closes the press again, the tape will pop out and fall down the press pit where
-       they can grab it. If they lost the spore then just back up to step 2 like the
-       other thing
+       they can grab it. If they lost the spore to be able to get to the press controls,
+       then just back up to step 2 like the other thing
 
 ### bio lab
 
@@ -336,8 +338,8 @@
        batteries at once)
 * sequence to obtain zug in jar (requires component #2):
     1. Player goes to boiler room and turns off the fume hood blower machine.
-    2. They get component #2 from front desk cabinet and put activate it,
-       and put the beacon in the blower (NIC is too large to fit)
+    2. They build component #2 and activate it, and put the beacon in the
+       blower (NIC is too large to fit)
     3. They turn on the blower in reverse which blows the beacon to
        the fume hood
     4. They activate the vurbilizer to get a vurble spore to the fume hood and then
@@ -360,6 +362,8 @@
 #### chem lab
 
 * lightswitch on wall to turn off lights, but one light is on and the other is off
+  * the lights are far enough apart that the player can stand with component #1 enabled
+    and be able to only capture one light but not both
 * super complicated glassware lab setup on bench
 * player can use component #1 to spore just one light, and then switch them both
   off
@@ -457,7 +461,7 @@
 
 * humming furnace and blowers can be turned on and off by levers
 * A duct is connected to fume hood in bio lab, is only way to get into fume hood,
-  place vurbilizer with component #2 inside, and then turn on the blower in reverse
+  place component #2 beacon inside, and then turn on the blower in reverse
 
 ### trash dump cave
 
@@ -478,9 +482,9 @@
 * the player can harvest them and they regrow, doing that gets raw voranium mass
 * the player must harvest some of these for each component to be made
 * sequence to obtain purified voranium (requires component #7):
-    1. player captures spore inside solar tank with #7 active.
-    2. comes back to here and drops nodules onto spore which teleports them into the
-       solar tank
+    1. player captures spore with #2, #5, and #7 active.
+    2. leaves #2 beacon in solar tank, then comes back to here and drops nodules onto
+       spore which teleports them into the solar tank
     3. if the player needs more nodules they can clone more with component #6
     4. the fluid displaced by the nodules flows down into the burrow and then to
        the voranium flower cave which boils the voranium flowers and once they're boiled
