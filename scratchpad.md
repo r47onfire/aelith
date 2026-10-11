@@ -57,9 +57,6 @@ sorta be a mix between Minecraft and Warframe?
 * the vurble spores are small biological blobs of energy that squish around if the player is not holding them
 * use a softbody from kaplay once that is added
 
-* vurbilizer must be near slime mold on the walls or floor to spawn a vurble spore
-* vurble spore must be near slime mold to be able to activate
-
 * the slime on the walls can be rendered with blurred circles follwing a cellular automata rule done with lifeweb
 * when a spore is captured, the vurbilizer chooses a number of random slime cells around it and deletes them from the CA sim and visually pulls them in to create the spore
 * when the spore is activated, it splatters cells out that add to the sim
