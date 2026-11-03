@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable no-emphasis-as-heading -->
 
-*TURN TEXT WRAP OFF TO VIEW THIS MAP PROPERLY*
+_TURN TEXT WRAP OFF TO VIEW THIS MAP PROPERLY_
 
 ```text
                              [radio tower]              START
@@ -34,73 +34,73 @@
 
 ## general dependency flow of challenges
 
-* open Aelith door (no tools)
-* get into elevator (component #0 only)
-* find tapes for components #1-#3
-* find projector and tape reader
-* install these in NIC to read the tapes
-* get components #1-#3 built using shop printer
-* get zug in jar for #4
-* get component #4 using physics lab press machine (requires components #2 and #3)
-* get antimatter battery fluid using chemistry (requires components #1-#4)
-* make an antimatter battery using it in machine shop
-* get component #5 from engineering lab (requires components #1-#4 and an antimatter
+- open Aelith door (no tools)
+- get into elevator (component #0 only)
+- find tapes for components #1-#3
+- find projector and tape reader
+- install these in NIC to read the tapes
+- get components #1-#3 built using shop printer
+- get zug in jar for #4
+- get component #4 using physics lab press machine (requires components #2 and #3)
+- get antimatter battery fluid using chemistry (requires components #1-#4)
+- make an antimatter battery using it in machine shop
+- get component #5 from engineering lab (requires components #1-#4 and an antimatter
   battery)
-* get components #6-#8 from zoology lab (requires component #5 and then
+- get components #6-#8 from zoology lab (requires component #5 and then
   component #6)
-* put nodules in tank to get warp compressor materials (requires component #7)
-* use component #8 to grab mutated tape from experiment robot
-* reverse the tape to make the tape for component #9
-* open locked door to Zylox's office and obtain the hyperwave relay (requires
+- put nodules in tank to get warp compressor materials (requires component #7)
+- use component #8 to grab mutated tape from experiment robot
+- reverse the tape to make the tape for component #9
+- open locked door to Zylox's office and obtain the hyperwave relay (requires
   component #9)
-* fix spaceship & leave
+- fix spaceship & leave
 
 ### crash site
 
-* player lands here to start.
-* mostly flat with a few boulders, and the player's wrecked spaceship. They can poke around
+- player lands here to start.
+- mostly flat with a few boulders, and the player's wrecked spaceship. They can poke around
   the spaceship but that's about it.
 
-* *NIC reboots* "BEEP BOOP. I am NIC, your personal assistant. ... Wait, did I just reboot?
-  Gosh, something serious just happened." *looks at crashed spaceship* "Shoot, now we're stuck.
-  Triply stuck." *looks closer* "The warp compressor is broken, so we'll never be able to fly out.
+- _NIC reboots_ "BEEP BOOP. I am NIC, your personal assistant. ... Wait, did I just reboot?
+  Gosh, something serious just happened." _looks at crashed spaceship_ "Shoot, now we're stuck.
+  Triply stuck." _looks closer_ "The warp compressor is broken, so we'll never be able to fly out.
   The hyperwave relay is broken, so I can't call a tow. And the antimatter battery is completely
-  dead, so even if the other two worked, there's not enough power to operate them." *sits down*
+  dead, so even if the other two worked, there's not enough power to operate them." _sits down_
   "I guess we'll never find out what Dr. E wanted of us, even if we have to get it from the jail
-  where he's at." *after a while if the player doesn't move* "I have a feeling that there's things
+  where he's at." _after a while if the player doesn't move_ "I have a feeling that there's things
   here on this planet that can be used to fix all this, but it's certainly not this rock."
 
 ### solar tank
 
-* large thermal generator that zugs managed to break into and swim around in.
-* roof is a lens that focuses the concentrated sun down onto the surface of the fluid
+- large thermal generator that zugs managed to break into and swim around in.
+- roof is a lens that focuses the concentrated sun down onto the surface of the fluid
   inside (the satellite is required to get enough sun).
-* there is a breaker panel outside to enable the generator that must be turned on
-* there is a ladder and hatch to enter the tank (for maintenance) from the outside.
-* thermal fluid is being heated up by sun and zugs like the warmth so that's why they
+- there is a breaker panel outside to enable the generator that must be turned on
+- there is a ladder and hatch to enter the tank (for maintenance) from the outside.
+- thermal fluid is being heated up by sun and zugs like the warmth so that's why they
   broke in
-* the thermal fluid is needed to be flooded down into the zug burrow below and through
+- the thermal fluid is needed to be flooded down into the zug burrow below and through
   into the voranium flower cave
-* there is a sieve lift submerged in the tank for cleaning it that the player can operate
+- there is a sieve lift submerged in the tank for cleaning it that the player can operate
   to lift the nodules up out of the thermal fluid (in order to retrieve them by pushing
   them down the tunnel to the zug burrow) should they need them
-* trying to activate a vurble spore inside of the solar tank causes it to explode and
+- trying to activate a vurble spore inside of the solar tank causes it to explode and
   not work because of the lack of surrounding slime mold energy to feed off of
-* the vurbilizer also does not work
+- the vurbilizer also does not work
 
 ### sinkhole w/stream
 
-* pit goes down to caves, rope back up
-* all caves are accessible without unlocking doors in the Aelith (the connections from
+- pit goes down to caves, rope back up
+- all caves are accessible without unlocking doors in the Aelith (the connections from
   the Aelith directly to the caves are trash chutes and are one-way (down, but not up))
-* fishing here?
+- fishing here?
 
 ### aelith entrance
 
-* large towering monlith with blast door locked by powered-down keypad
-* landing pads nearby
-* player must climb radio tower and command the satellite to direct sunlight to the solar tank
-* sequence to get in:
+- large towering monlith with blast door locked by powered-down keypad
+- landing pads nearby
+- player must climb radio tower and command the satellite to direct sunlight to the solar tank
+- sequence to get in:
     1. player goes to solar tank and turns on breaker.
     2. player goes to radio tower and cranks emergency generator.
     3. using that power, the player sends movement commands to a solar satellite
@@ -110,31 +110,31 @@
     5. once the Aelith is powered up they can push the door button and it will open.
     6. "how do you know the code to get in??" / "why does this recognize you??" / "how do you have
        a security override??"
-* NIC will try to connect to the hypernet using the radio tower but fail, since it's
+- NIC will try to connect to the hypernet using the radio tower but fail, since it's
   radio not hyperweb and the hyperwave relay is broken.
-    * "Shoot, I thought we'd gotten a chance to send for help... but no, they had to build a radio tower.
+    - "Shoot, I thought we'd gotten a chance to send for help... but no, they had to build a radio tower.
       Radio... the most reliable choice for local communications, but fat chance of it ever working to
       connect to the hypernet..."
 
 ### radio tower/mirrors
 
-* large radio mast that carries transceivers, but they are broken
-* player must crank backup generator to make a little power and then send messages
+- large radio mast that carries transceivers, but they are broken
+- player must crank backup generator to make a little power and then send messages
   to a satelite to tilt mirrors to the solar tank, once tank receives power it will
   power up the door lock and allow the player to open the door to the Aelith
 
 ### lobby
 
-* large atrium with holographic trees
-* contains an elevator that goes down to the labs, but it is behind a
+- large atrium with holographic trees
+- contains an elevator that goes down to the labs, but it is behind a
   decontamination airlock
-* the player can only get in to the elevator using the vurbilizer found in the
+- the player can only get in to the elevator using the vurbilizer found in the
   conference room
-  * the airlock doors are programmed to only be one door unlocked at once,
-    otherwise it's not an airlock.
+    - the airlock doors are programmed to only be one door unlocked at once,
+      otherwise it's not an airlock.
 
-    `[elevator + call button]----[airlock door]-----[airlock door]----[airlock operation button]---[entry doors]----[to front desk]`
-* sequence to enter elevator:
+        `[elevator + call button]----[airlock door]-----[airlock door]----[airlock operation button]---[entry doors]----[to front desk]`
+- sequence to enter elevator:
     1. player goes to conference room and gets vurbilizer.
     2. player presses button to open first door of airlock.
     3. player goes into the airlock vestibule, spores while inside
@@ -149,70 +149,70 @@
 
 ### loading dock
 
-* this is "outside" in terms of theming and tileset.
-* large rollup doors and dock for spaceships to pick up goods
-* the doors can only be opened from the inside, so the player must enter by the front door
+- this is "outside" in terms of theming and tileset.
+- large rollup doors and dock for spaceships to pick up goods
+- the doors can only be opened from the inside, so the player must enter by the front door
   the first time.
 
 ### front desk
 
-* misc stuff desk supplies, notes
-* find tape for component #1 in file cabinet
+- misc stuff desk supplies, notes
+- find tape for component #1 in file cabinet
 
 ### conference room
 
-* chairs askew
-* vurbilizer is sitting prominently on table
-* projector mounted on ceiling
+- chairs askew
+- vurbilizer is sitting prominently on table
+- projector mounted on ceiling
 
 ### executive office
 
-* contains final communications from Zylox as well as a working hyperwave relay
+- contains final communications from Zylox as well as a working hyperwave relay
   installed in his computer which can be used in place for lore to verify it works
   before it can be removed
-* the door lock can only be opened from the outside using component #9 (it can always
+- the door lock can only be opened from the outside using component #9 (it can always
   be opened from the inside for exit safety)
 
 ### stock room
 
-* contains 5 racks of spaceship bodywork
-* arm lift robot to take person up and down the racks
-* the racks are blocked by the bodywork so you can't walk down the end through the
+- contains 5 racks of spaceship bodywork
+- arm lift robot to take person up and down the racks
+- the racks are blocked by the bodywork so you can't walk down the end through the
   wall into the zoology lab
-* when mineral nodules roll across the shelves they shove the bodywork off with a
+- when mineral nodules roll across the shelves they shove the bodywork off with a
   clatter
-  * the player must retrieve the nodules from the shelf by riding the robot arm up to
-    the end of the shelf; the nodules are stopped from falling off by a lip on the
-    shelf above
-  * rack contents:
-    1. (after 2 nodules' overflow) nothing
-    2. (after 4 nodules' overflow) component #6
-    3. (after 8 nodules' overflow) component #7
-    4. (after 16 nodules' overflow) component #8 either on rack 4 or 5 (carry out) since they both trigger at the same time
+    - the player must retrieve the nodules from the shelf by riding the robot arm up to
+      the end of the shelf; the nodules are stopped from falling off by a lip on the
+      shelf above
+    - rack contents:
+        1. (after 2 nodules' overflow) nothing
+        2. (after 4 nodules' overflow) component #6
+        3. (after 8 nodules' overflow) component #7
+        4. (after 16 nodules' overflow) component #8 either on rack 4 or 5 (carry out) since they both trigger at the same time
 
 ### zoology lab
 
-* for studying the zugs
-* put the 4 bit binary counter here
-  * actuated by mineral nodules from the caves
-  * the player can only move the nodules using component #5, they are too heavy
-    otherwise.
-  * the zugs can roll them around like dung beetle balls but much larger.
-  * like dung beetles, the zugs are fiercely attracted to the mineral nodules.
-  * the 5 levels of the binary counter are unintentionally connected to the shelves
-    of the stock room
-  * the zugs feed off of the energy stored in the nodules, so they seek them out
-* construction of the binary counter bits, each is a pen for 1 zug:
-  * oriented like long horizontal box
-  * nodule comes in the top.
-  * when the zug in the pen sees it it gets excited, runs towards the nodule, grabs
-    it, and rolls it into the bed, then sleeps on it
-  * when the 2nd nodule comes in, the zug gets distracted and runs at it, pushing
-    it to the end of the cage
-  * when the heavy nodule reaches the end of the cage it causes the cage to tip, and
-    the one in the nest rolls out, dumping both (one through the hole in the wall to the stockroom
-    shelf, the other to the next cage)
-* sequence to get tapes for component #6, #7, and #8:
+- for studying the zugs
+- put the 4 bit binary counter here
+    - actuated by mineral nodules from the caves
+    - the player can only move the nodules using component #5, they are too heavy
+      otherwise.
+    - the zugs can roll them around like dung beetle balls but much larger.
+    - like dung beetles, the zugs are fiercely attracted to the mineral nodules.
+    - the 5 levels of the binary counter are unintentionally connected to the shelves
+      of the stock room
+    - the zugs feed off of the energy stored in the nodules, so they seek them out
+- construction of the binary counter bits, each is a pen for 1 zug:
+    - oriented like long horizontal box
+    - nodule comes in the top.
+    - when the zug in the pen sees it it gets excited, runs towards the nodule, grabs
+      it, and rolls it into the bed, then sleeps on it
+    - when the 2nd nodule comes in, the zug gets distracted and runs at it, pushing
+      it to the end of the cage
+    - when the heavy nodule reaches the end of the cage it causes the cage to tip, and
+      the one in the nest rolls out, dumping both (one through the hole in the wall to the stockroom
+      shelf, the other to the next cage)
+- sequence to get tapes for component #6, #7, and #8:
     1. go to cave and bring up mineral nodules using component #5
     2. after dropping in 4 nodules (3 total because overflowed ones can be reused),
        player gets the tape for component #6 and is able to clone them to get the 5 required to
@@ -226,48 +226,48 @@
 
 ### machine shop
 
-* Contains the 3D printers needed to create the vurbilizer components
-  * The printer requires voranium to work and has 3 charges to start
-    * player can get more voranium by harvesting voranium flowers from cave or
-      bio lab
-  * easter egg: if you start a print job and then go to the printer before it
-    finishes you can change the print speed to "lightspeed", "ridiculous", or
-    "ludicrous", and if you put it in "ludicrous" mode it has a 50% chance
-    of spaghettiing the entire print and forcing you to start again
-* machine tools, electronics assembly machines
-  * (check pictures of Adafruit's manufacturing floor and/or the university machine
-    shop for reference)
-* tools, wrench is takeable
-* 1 printer works, the larger other ones don't work but can be fixed later
-* large gantry rail crane on the ceiling (like in the guide hall at NCNR) that is
+- Contains the 3D printers needed to create the vurbilizer components
+    - The printer requires voranium to work and has 3 charges to start
+        - player can get more voranium by harvesting voranium flowers from cave or
+          bio lab
+    - easter egg: if you start a print job and then go to the printer before it
+      finishes you can change the print speed to "lightspeed", "ridiculous", or
+      "ludicrous", and if you put it in "ludicrous" mode it has a 50% chance
+      of spaghettiing the entire print and forcing you to start again
+- machine tools, electronics assembly machines
+    - (check pictures of Adafruit's manufacturing floor and/or the university machine
+      shop for reference)
+- tools, wrench is takeable
+- 1 printer works, the larger other ones don't work but can be fixed later
+- large gantry rail crane on the ceiling (like in the guide hall at NCNR) that is
   rusted and broken (it does nothing)
 
 ### physics lab
 
-* entrance is on the left
-* main installation is a million-pound deadweight machine (like the one at NIST) with
+- entrance is on the left
+- main installation is a million-pound deadweight machine (like the one at NIST) with
   a fixture to hold a zug in the crushing jaws. it extends down into a pit
-* gravity manipulators that can push objects and act as invisible links (enabling
+- gravity manipulators that can push objects and act as invisible links (enabling
   stuff that 2D physics engines with collision layers allow but would be impossible
   in real life 3D) are the lift mechanism for the deadweight machine lower platform
-* the walkway to go over to the control panel can be picked up and placed in the jaws
+- the walkway to go over to the control panel can be picked up and placed in the jaws
   of the press
-* the control panel for the machine is on the right and is only accessible after
+- the control panel for the machine is on the right and is only accessible after
   crossing the removable panels
-  * the player cannot jump over the panels due to a catwalk above it and if they fall in
-    the pit, there is a ladder on the left that gets them back to the entryway doors, but
-    they cannot jump back up to the controls unless the floor tiles are in place
-  * the press automatically opens when the player is not pressing the "close" button,
-    for safety
-* there is a cryocooler and helium compressor available for the player to
+    - the player cannot jump over the panels due to a catwalk above it and if they fall in
+      the pit, there is a ladder on the left that gets them back to the entryway doors, but
+      they cannot jump back up to the controls unless the floor tiles are in place
+    - the press automatically opens when the player is not pressing the "close" button,
+      for safety
+- there is a cryocooler and helium compressor available for the player to
   jerry rig attach to the press jaws to keep the zug frozen (otherwise it would
   thaw and become uncrushable), it cannot be attached without the floor
   tiles in place
-* the power cable to the helium compressor broke, requiring the player to plug
+- the power cable to the helium compressor broke, requiring the player to plug
   in the vurbilizer to power it off the vurbilizer's energy source
-* the player must go to the bio lab and get the zug from the jar in the fume
+- the player must go to the bio lab and get the zug from the jar in the fume
   hood, this zug has eaten the program tape for component #4.
-* activation sequence for #4:
+- activation sequence for #4:
     1. Player enters with zug in jar. gets zug out of jar and places it in the jaws
        of the press.
     2. Player must now go to the control panel side and capture a spore.
@@ -296,23 +296,23 @@
 
 ### bio lab
 
-* no lightswitch on wall, lights are permanently on
-* contains a fume hood and chemical storage cabinets (that contain only glassware)
-* plus a zug floating in a jar of thermal fluid inside the fume hood (the thermal
+- no lightswitch on wall, lights are permanently on
+- contains a fume hood and chemical storage cabinets (that contain only glassware)
+- plus a zug floating in a jar of thermal fluid inside the fume hood (the thermal
   fluid is toxic and thus requires the fume hood to be closed)
-* terrarium with some voranium flowers growing in it (can be opened to take them; they do
+- terrarium with some voranium flowers growing in it (can be opened to take them; they do
   NOT respawn here, only in the voranium flower cave below)
-* the zug ate the tape for component #4, but the player must first freeze and then
+- the zug ate the tape for component #4, but the player must first freeze and then
   crack open the zug in the physics lab to get it
-* the player can only get into the fume hood via the ductwork from the boiler room to
+- the player can only get into the fume hood via the ductwork from the boiler room to
   be able to grab the jar since the fume hood is jammed down by a misplaced ring stand
-* cabinet contains tape for component #3
-* the supply closet and chem lab doors can only be opened from the outside by powering the lock
+- cabinet contains tape for component #3
+- the supply closet and chem lab doors can only be opened from the outside by powering the lock
   with the vurbilizer's battery, thus forcing the player to do without it while
   they're in there; the power injection point is too far from the doors for the
   player to be able to grab the vurbilizer while standing in the doorway
-* the doors for the chem lab and supply closet can always be opened from the inside (for safety)
-* sequence for antimatter battery fluid (requires components #1-#4):
+- the doors for the chem lab and supply closet can always be opened from the inside (for safety)
+- sequence for antimatter battery fluid (requires components #1-#4):
     1. Player uses the vurbilizer to power the door lock mechanism for the supply
        closet. this lets them in.
     2. Player goes in with them the remote probe beacon (component #2) and leaves the
@@ -336,7 +336,7 @@
        between the closet and the lab to bring the chemicals and do the reaction,
        and at the end they have the antimatter battery fluid. (It makes enough for 8
        batteries at once)
-* sequence to obtain zug in jar (requires component #2):
+- sequence to obtain zug in jar (requires component #2):
     1. Player goes to boiler room and turns off the fume hood blower machine.
     2. They build component #2 and activate it, and put the beacon in the
        blower (NIC is too large to fit)
@@ -348,74 +348,74 @@
 
 #### supply closet
 
-* dark, no lights
-* racks of chemical bottles and glassware
-  * only reachable glassware is an absolutely gigantic volumetric flask;
-    the player can only carry one at once
-* chemicals are light-sensitive and taking some out while the lights are on
+- dark, no lights
+- racks of chemical bottles and glassware
+    - only reachable glassware is an absolutely gigantic volumetric flask;
+      the player can only carry one at once
+- chemicals are light-sensitive and taking some out while the lights are on
   will destroy it
-* the chemical supply bottles have basically an infinite supply for the purposes
+- the chemical supply bottles have basically an infinite supply for the purposes
   of the game
-* the supply bottles are too large to move, and the player does not have
+- the supply bottles are too large to move, and the player does not have
   component #5 yet so they can't teleport the bottle out.
 
 #### chem lab
 
-* lightswitch on wall to turn off lights, but one light is on and the other is off
-  * the lights are far enough apart that the player can stand with component #1 enabled
-    and be able to only capture one light but not both
-* super complicated glassware lab setup on bench
-* player can use component #1 to spore just one light, and then switch them both
+- lightswitch on wall to turn off lights, but one light is on and the other is off
+    - the lights are far enough apart that the player can stand with component #1 enabled
+      and be able to only capture one light but not both
+- super complicated glassware lab setup on bench
+- player can use component #1 to spore just one light, and then switch them both
   off
-* to safely tansport the chemicals between the 2 darkened rooms the player must
+- to safely tansport the chemicals between the 2 darkened rooms the player must
   spore-in each of the rooms with component #3 and #4 enabled so that they can go back to
   the supply room and get all the things they need
-* the chem reaction when successful will create a glowing fluid needed to synthesize
+- the chem reaction when successful will create a glowing fluid needed to synthesize
   the antimatter battery
 
 ### engineering lab
 
-* extension of the machine shop
-* blueprints for the warp compressor
-* various devices used to test them
-* electronics workstations
-* the gantry crane in here works but the motor will overload and trip the main breaker
+- extension of the machine shop
+- blueprints for the warp compressor
+- various devices used to test them
+- electronics workstations
+- the gantry crane in here works but the motor will overload and trip the main breaker
   when run without the antimatter battery as a separate power source, this causes all
   the doors to lock and the elevator to stop working, the player must exit through
   the trash chute, go to the caves, back up to the solar tank, and reset the breaker,
   then reenter
-* once installed the antimatter battery cannot be removed (this forces the player to
+- once installed the antimatter battery cannot be removed (this forces the player to
   make a 2nd one for their spaceship
-* tape for component #5 is stored on a high shelf
-* player must plug in antimatter battery and control gantry crane to knock it down.
+- tape for component #5 is stored on a high shelf
+- player must plug in antimatter battery and control gantry crane to knock it down.
 
 ### robotics lab
 
-* contains blueprints for the Lith Agent
-* contains large 6DoF robot arm inside safety cage performing an infinite experiment
+- contains blueprints for the Lith Agent
+- contains large 6DoF robot arm inside safety cage performing an infinite experiment
   optimization loop
-  * the E-stop is inside the cage
-  * there is a results chute that the robot passes over but does not drop stuff in
-    * this chute is sloped downwards so that attempting to throw the #2 beacon in
-      results in the beacon just sliding back out
-  * the experimental rig has the bits and pieces of prototype vurbilizers attached to it
-    * the robot can trigger them but the containment cage keeps their extent inside the cage
-    * there are levers on the wall that do nothing; the robot flips them to check if the vurble
-      spore has changed them
-    * the vurble spores created by the robot always restore state 1:1 nonreversed because it
-      was seeded from tape #1. the true solution requires reversing the tape, but the robot
-      can't do that
-    * nothing changes because the robot has hit a false peak and is unable to gradient-climb
-      out to the true peak
-  * the robot is performing an experiment attempting to create component #9 (it never
-    succeeds as the true solution is to physically reverse the entire tape of what it
-    has so far)
-    * the experiment rig writes the results to a tape
-    * the robot takes the tape and moves it to a reader which analyzes it and
-      figures out what to do next - which is to tweak the vurbilizer prototype usually
-    * the robot then performs the next step and returns the tape to the apparatus
-      to collect the data for the next round
-* sequence to get component #9 (requires component #8):
+    - the E-stop is inside the cage
+    - there is a results chute that the robot passes over but does not drop stuff in
+        - this chute is sloped downwards so that attempting to throw the #2 beacon in
+          results in the beacon just sliding back out
+    - the experimental rig has the bits and pieces of prototype vurbilizers attached to it
+        - the robot can trigger them but the containment cage keeps their extent inside the cage
+        - there are levers on the wall that do nothing; the robot flips them to check if the vurble
+          spore has changed them
+        - the vurble spores created by the robot always restore state 1:1 nonreversed because it
+          was seeded from tape #1. the true solution requires reversing the tape, but the robot
+          can't do that
+        - nothing changes because the robot has hit a false peak and is unable to gradient-climb
+          out to the true peak
+    - the robot is performing an experiment attempting to create component #9 (it never
+      succeeds as the true solution is to physically reverse the entire tape of what it
+      has so far)
+        - the experiment rig writes the results to a tape
+        - the robot takes the tape and moves it to a reader which analyzes it and
+          figures out what to do next - which is to tweak the vurbilizer prototype usually
+        - the robot then performs the next step and returns the tape to the apparatus
+          to collect the data for the next round
+- sequence to get component #9 (requires component #8):
     1. the player must construct another Lith Agent and another copy of component
        #2 and put them together and they get a remote controlled non-autonomous copy
        of the Lith Agent to be able to enter the robot safety cage (NIC refuses to go
@@ -424,7 +424,7 @@
        on the robot while the claw is open. The Lith Agent clone is not needed past this and
        the player can do whatever with it.
     3. they switch back to controlling the Explorer and use component #8 to capture
-       *only* the claw of the robot - using #1 would capture the position of the arm and tape
+       _only_ the claw of the robot - using #1 would capture the position of the arm and tape
        as well
     4. they restart the robot
     5. they wait until it's holding the tape and it's passing over the results chute,
@@ -444,44 +444,44 @@
 
 ### basement
 
-* landing for elevator
-* nothing else here
+- landing for elevator
+- nothing else here
 
 ### server room
 
-* dimly lit/decaying, glowing blobs hanging off of racks, short ceiling
-* at least three 9-track tape readers here with built-in controls to copy and restore
+- dimly lit/decaying, glowing blobs hanging off of racks, short ceiling
+- at least three 9-track tape readers here with built-in controls to copy and restore
   (error correction) a tape
-* player must get tools from workshop and take apart a tape reader and install
+- player must get tools from workshop and take apart a tape reader and install
   it on NIC along with the projector to be able to read the tapes and convert them
   to the 3D printer format
-* contains computer terminal that does nothing other than look cool
+- contains computer terminal that does nothing other than look cool
 
 ### boiler room
 
-* humming furnace and blowers can be turned on and off by levers
-* A duct is connected to fume hood in bio lab, is only way to get into fume hood,
+- humming furnace and blowers can be turned on and off by levers
+- A duct is connected to fume hood in bio lab, is only way to get into fume hood,
   place component #2 beacon inside, and then turn on the blower in reverse
 
 ### trash dump cave
 
-* contains blueprints for the antimatter battery
-* lots of blank tapes and spools and failed 3D prints
-  * the player must get at least 2 of these to get the component #9 tape
-* being munched on by zugs
+- contains blueprints for the antimatter battery
+- lots of blank tapes and spools and failed 3D prints
+    - the player must get at least 2 of these to get the component #9 tape
+- being munched on by zugs
 
 ### waterfall cave
 
-* contains tape for component #2
+- contains tape for component #2
 
 ### voranium flower cave
 
-* contains a growth of glowing voranium flowers that feed off the same mineral energy
+- contains a growth of glowing voranium flowers that feed off the same mineral energy
   as the zugs, they hang like snot droplets from the ceiling and retract into the ceiling
   when touched
-* the player can harvest them and they regrow, doing that gets raw voranium mass
-* the player must harvest some of these for each component to be made
-* sequence to obtain purified voranium (requires component #7):
+- the player can harvest them and they regrow, doing that gets raw voranium mass
+- the player must harvest some of these for each component to be made
+- sequence to obtain purified voranium (requires component #7):
     1. player captures spore with #2 and #7 active.
     2. leaves #2 beacon in solar tank, then comes back to here and drops nodules onto
        spore which teleports them into the solar tank
@@ -496,16 +496,16 @@
        glassware
     7. these two components go into printer along with blueprint to make the warp
        compressor
-* the zugs drink the thermal fluid and then pee in the tank so the fluid will eventually
+- the zugs drink the thermal fluid and then pee in the tank so the fluid will eventually
   make its way back up to the tank
-* there is also a lookalike animal here that is carnivorous and eats vurble spores
-    * the player must be stealthy while handling one in here (by sneaking) or this animal
+- there is also a lookalike animal here that is carnivorous and eats vurble spores
+    - the player must be stealthy while handling one in here (by sneaking) or this animal
       will notice motion, wake up, and eat the spore
 
 ### zug burrow
 
-* tunnel connects back up to solar tank
-* contains magnetic nodules with energy specks in them
-  * too heavy for the player to lift on their own
-    * requires the use of component #5
-  * there are only 3 magnetic nodules and many more zugs
+- tunnel connects back up to solar tank
+- contains magnetic nodules with energy specks in them
+    - too heavy for the player to lift on their own
+        - requires the use of component #5
+    - there are only 3 magnetic nodules and many more zugs

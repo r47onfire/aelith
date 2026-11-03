@@ -15,26 +15,26 @@ So you crash-landed on a dusty barren world. It would seem as though you're stuc
 
 ## Code overview (eh)
 
-* Aelith uses [KAPLAY.js](https://v4000.kaplayjs.com) for lower-level mechanics such as rendering, physics, asset loading, input handling, and scene management.
+- Aelith uses [KAPLAY.js](https://v4000.kaplayjs.com) for lower-level mechanics such as rendering, physics, asset loading, input handling, and scene management.
 
     Note: half the time this is actually a custom build of KAPLAY, due to the fact that KAPLAY is free software and I have a fork in which I regularly fix bugs and add new features to KAPLAY itself.
 
-* The actual data, assets, and scripting is implemented using Backolon, an extremely cursed scripting language that is entirely undocumented as of when I wrote this message. It is embedded as a Git submodule (rather than being added as a npm dependency) because I tend to work on both of them at the same time.
+- The actual data, assets, and scripting is implemented using Backolon, an extremely cursed scripting language that is entirely undocumented as of when I wrote this message. It is embedded as a Git submodule (rather than being added as a npm dependency) because I tend to work on both of them at the same time.
 
 ## Top-level roadmap
 
-* [X] Finalize the game's plot and story
-* [ ] Implement game saves to persist gameplay progress between page reloads
-* [ ] Implement all of the mechanics needed for the puzzles (while creating first drafts of assets as needed)
-* [ ] Implement mod loading
-* [ ] Polish the art and sound design
-* [ ] Beta test
-* [ ] Release initial version on Newgrounds, itch.io, and github pages for free
+- [x] Finalize the game's plot and story
+- [ ] Implement game saves to persist gameplay progress between page reloads
+- [ ] Implement all of the mechanics needed for the puzzles (while creating first drafts of assets as needed)
+- [ ] Implement mod loading
+- [ ] Polish the art and sound design
+- [ ] Beta test
+- [ ] Release initial version on Newgrounds, itch.io, and github pages for free
 
 ### Future plans
 
-* [ ] Integrate [syd](https://github.com/dragoncoder047/syd) for sounds and music (once syd is complete as well of course)
-* [ ] Release an *Aelith Unbounded* mod or update that adds in-game world editing (i.e., make it a sandbox game)
+- [ ] Integrate [syd](https://github.com/dragoncoder047/syd) for sounds and music (once syd is complete as well of course)
+- [ ] Release an _Aelith Unbounded_ mod or update that adds in-game world editing (i.e., make it a sandbox game)
 
 ## For developers and alpha testers
 
@@ -45,7 +45,7 @@ So you crash-landed on a dusty barren world. It would seem as though you're stuc
 4. `pnpm dev`
 5. open <http://localhost:8000>
 6. if you get a white screen of death check browser console for errors:
-    * "xxx is only available in secure origins" &rarr; go to chrome://flags/#unsafely-treat-insecure-origin-as-secure (or the corresponding setting for your browser) and whitelist <http://localhost:8000>
+    - "xxx is only available in secure origins" &rarr; go to chrome://flags/#unsafely-treat-insecure-origin-as-secure (or the corresponding setting for your browser) and whitelist <http://localhost:8000>
 
 ## License
 

@@ -2,7 +2,7 @@
 
 ## Gameplay
 
-*Aelith* is a 2D side-scrolling Metroidvania. The player controls a silent and nameless robotic alien protagonist who crash-lands on a desert planet and explores an abandoned datacenter and research outpost called the Aelith, in search of parts to repair their broken spaceship. Along their way they are accompanied by a floating AI robot companion named NIC, who provides commentary and comic relief throughout the game.
+_Aelith_ is a 2D side-scrolling Metroidvania. The player controls a silent and nameless robotic alien protagonist who crash-lands on a desert planet and explores an abandoned datacenter and research outpost called the Aelith, in search of parts to repair their broken spaceship. Along their way they are accompanied by a floating AI robot companion named NIC, who provides commentary and comic relief throughout the game.
 
 Within the Aelith, the player finds a tool called a "vurbilizer" that allows them to spawn "vurble spores" at will. Once spawned, a vurble spore is able to teleport the player on command back to the point where it was spawned, as well as cause interactable items such as doors to return to the same state (closed or open) they were in when the spore was captured. Crucially, the spores do not affect anything else linked when they revert the state of an object. By strategically spawning vurble spores that will restore the state of some objects in a linked group but not others, the player can bypass the security interlocks still present on doors inside the Aelith and access server rooms, research labs, and offices.
 
@@ -29,7 +29,7 @@ The components that can be found are, in order of appearance:
 4. An expanded storage area for the vurbilizer, allowing it to remember an unlimited number of spores, so that two working vurble spores can exist simultaneously.
 5. A component that changes the vurble spores so instead of teleporting the player back to where they were when it was captured, it instead leaves the player in place and teleports all the captured movable objects to the same relative offset from the player as they were when the vurble spore was captured, allowing the player to move large items or sneak things past security systems.
 6. A component that lets the spores clone objects that are out of range. It does NOT clone any hidden fine-structure or state, so it can't be used to clone living things (vurble spores, zugs) or data on tapes (the clones are all blank).
-7. A component that makes the spore *not* remember who captured the vurble spore, so instead of teleporting the entity that created the vurble spore, it teleports the entity who triggers it.
+7. A component that makes the spore _not_ remember who captured the vurble spore, so instead of teleporting the entity that created the vurble spore, it teleports the entity who triggers it.
 8. A component that allows the player to use the vurbilizer to select exactly which objects should be captured, instead of just those within a radius.
 9. A component that injects noise into the spore's data so that when it is triggered it restores boolean states to the opposite of what they were when the spore was created.
 

@@ -15,9 +15,9 @@ players: map of { peer ID to Entity ID }
 chunks: list of chunks (containing tile and entity state) - synced
 ```
 
-* What the main datapack is. (This is to prevent someone playing vanilla Aelith from trying to connect to a friend who has an alternative game datapack installed.)
-* What mods are installed. (The mods will each declare in their manifests whether they're required to be installed on both sides or not.)
-* What the player entity/ies IDs are for each client. (there will of course only be one in singleplayer mode and it will only be able to load one to begin with)
+- What the main datapack is. (This is to prevent someone playing vanilla Aelith from trying to connect to a friend who has an alternative game datapack installed.)
+- What mods are installed. (The mods will each declare in their manifests whether they're required to be installed on both sides or not.)
+- What the player entity/ies IDs are for each client. (there will of course only be one in singleplayer mode and it will only be able to load one to begin with)
 
 ### A chunk
 
@@ -31,10 +31,10 @@ chunks: list of chunks (containing tile and entity state) - synced
 
 Not sure how to do this. The datapack's initial state will certainly be very different to facilitate easy hand-editing of it. It will have to handle:
 
-* Tiles that contain nothing
-* Tiles that contain a tile from the room theme
-* Tiles that contain a display entity
-* Tiles that contain multiple things
+- Tiles that contain nothing
+- Tiles that contain a tile from the room theme
+- Tiles that contain a display entity
+- Tiles that contain multiple things
 
 ### An entity
 
