@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
 import { expandFileReferences, FILE_KEY } from "../src/load";
 
-var DUMMY_FS: Record<string, any>
+var DUMMY_FS: Record<string, any>;
 beforeEach(() => {
     DUMMY_FS = {
         "/foo": {
@@ -9,20 +9,20 @@ beforeEach(() => {
         },
         "/bar": {
             b: "hello",
-            c: { [FILE_KEY]: "/foo" }
+            c: { [FILE_KEY]: "/foo" },
         },
         "/baz": [1, 2, 3, { [FILE_KEY]: "/bar" }],
         "/recur1": [0, { [FILE_KEY]: "/recur2" }],
         "/recur2": [0, { [FILE_KEY]: "/recur1" }],
         "/null": null,
-    }
+    };
 });
 const fetches: string[] = [];
 const DUMMY_DOWNLOAD = (url: URL) => {
     fetches.push(url.pathname);
     return Promise.resolve(DUMMY_FS[url.pathname]);
-}
-afterEach(() => fetches.length = 0);
+};
+afterEach(() => (fetches.length = 0));
 
 const obj: any = [0, [0, {}]];
 obj[1][1] = obj;

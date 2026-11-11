@@ -69,9 +69,5 @@
         "ZZFX",
         "zzfxm"
     ],
-    "yaml.customTags": [
-        "!flatten sequence",
-        "!include scalar",
-        "!file scalar"
-    ],
+    "yaml.customTags": ["!flatten sequence", "!include scalar", "!file scalar"]
 }

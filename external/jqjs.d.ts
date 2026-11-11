@@ -1,4 +1,4 @@
-declare module '@michaelhomer/jqjs' {
+declare module "@michaelhomer/jqjs" {
     export type JQFilter = {
         (input: any): Generator<any, void, unknown>;
         filter: unknown; // AST

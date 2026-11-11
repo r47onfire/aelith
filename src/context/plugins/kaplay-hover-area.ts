@@ -5,12 +5,15 @@ export function kaplayHoverArea(k: KAPLAYCtx) {
     return {
         area(...args: Parameters<typeof old>) {
             const comp = old(...args);
-            comp.drawInspect = function (this: GameObj<AreaComp | AnchorComp | FixedComp>) {
+            comp.drawInspect = function (
+                this: GameObj<AreaComp | AnchorComp | FixedComp>,
+            ) {
                 const a = this.localArea();
 
                 k.pushTransform();
                 if (this.area.offset) k.pushTranslate(this.area.offset);
-                const isFixed = (obj: any): boolean => obj.fixed || (obj.parent ? isFixed(obj.parent) : false);
+                const isFixed = (obj: any): boolean =>
+                    obj.fixed || (obj.parent ? isFixed(obj.parent) : false);
 
                 const opts = {
                     outline: {
@@ -29,15 +32,13 @@ export function kaplayHoverArea(k: KAPLAYCtx) {
                         width: a.width * this.area.scale.x,
                         height: a.height * this.area.scale.y,
                     });
-                }
-                else if (a instanceof k.Polygon) {
+                } else if (a instanceof k.Polygon) {
                     k.drawPolygon({
                         ...opts,
                         pts: a.pts,
                         scale: this.area.scale,
                     });
-                }
-                else if (a instanceof k.Circle) {
+                } else if (a instanceof k.Circle) {
                     k.drawCircle({
                         ...opts,
                         pos: a.center,
@@ -46,8 +47,8 @@ export function kaplayHoverArea(k: KAPLAYCtx) {
                 }
 
                 k.popTransform();
-            }
+            };
             return comp;
-        }
-    }
+        },
+    };
 }

@@ -1,45 +1,54 @@
-import type { BodyComp, Comp, DrawLinesOpt, GameObj, InternalGameObjRaw, KAPLAYCtx, PosComp, Vec2 } from "kaplay";
+import type {
+    BodyComp,
+    Comp,
+    DrawLinesOpt,
+    GameObj,
+    InternalGameObjRaw,
+    KAPLAYCtx,
+    PosComp,
+    Vec2,
+} from "kaplay";
 
 export interface DistancePlusOpt {
-    other?: GameObj<BodyComp | PosComp>
-    p1?: Vec2
-    p2?: Vec2
-    length?: number | "auto"
-    drawOpts?: Omit<DrawLinesOpt, "pts">
-    alpha?: number
-    beta?: number
+    other?: GameObj<BodyComp | PosComp>;
+    p1?: Vec2;
+    p2?: Vec2;
+    length?: number | "auto";
+    drawOpts?: Omit<DrawLinesOpt, "pts">;
+    alpha?: number;
+    beta?: number;
 }
 
 export interface DistanceCompPlus extends Comp {
-    other: GameObj<PosComp | BodyComp | PosComp>
-    p1: Vec2
-    p2: Vec2,
-    length: number
-    drawOpts: Omit<DrawLinesOpt, "pts">
-    alpha: number
-    beta: number
-    readonly worldP1: Vec2
-    readonly worldP2: Vec2
-    readonly localP1: Vec2
+    other: GameObj<PosComp | BodyComp | PosComp>;
+    p1: Vec2;
+    p2: Vec2;
+    length: number;
+    drawOpts: Omit<DrawLinesOpt, "pts">;
+    alpha: number;
+    beta: number;
+    readonly worldP1: Vec2;
+    readonly worldP2: Vec2;
+    readonly localP1: Vec2;
     readonly localP2: Vec2;
 }
 
-export interface ChainMovableComp {
-}
+export interface ChainMovableComp {}
 
 export interface KAPLAYDistanceCompPlusPlugin {
-    extradistance(opts?: DistancePlusOpt): DistanceCompPlus
-    chainmovable(): ChainMovableComp
+    extradistance(opts?: DistancePlusOpt): DistanceCompPlus;
+    chainmovable(): ChainMovableComp;
 }
 
 type DC = PosComp | BodyComp | DistanceCompPlus;
 
-export function kaplayExtraDistance(K: KAPLAYCtx): KAPLAYDistanceCompPlusPlugin {
+export function kaplayExtraDistance(
+    K: KAPLAYCtx,
+): KAPLAYDistanceCompPlusPlugin {
     return {
         // @ts-expect-error
         extradistance(opts = {}) {
-            const
-                scratch1 = K.vec2(),
+            const scratch1 = K.vec2(),
                 scratch2 = K.vec2(),
                 scratch3 = K.vec2(),
                 scratch4 = K.vec2();
@@ -47,16 +56,15 @@ export function kaplayExtraDistance(K: KAPLAYCtx): KAPLAYDistanceCompPlusPlugin 
                 var P = obj,
                     len = obj.length,
                     doVel = true;
-                for (; ;) {
+                for (;;) {
                     doCorrections(obj, P, len, doVel, K);
                     if (P.other.has("extradistance")) {
                         doVel = false;
                         len += (P.other as any).length;
                         P = P.other as any;
-                    }
-                    else break;
+                    } else break;
                 }
-            }
+            };
             return {
                 id: "extradistance",
                 require: ["pos"],
@@ -65,7 +73,7 @@ export function kaplayExtraDistance(K: KAPLAYCtx): KAPLAYDistanceCompPlusPlugin 
                 p2: opts.p2 ?? K.vec2(),
                 length: opts.length ?? "auto",
                 drawOpts: opts.drawOpts,
-                alpha: opts.alpha ?? .6,
+                alpha: opts.alpha ?? 0.6,
                 beta: opts.beta ?? 1.1,
                 add() {
                     // @ts-expect-error
@@ -74,16 +82,28 @@ export function kaplayExtraDistance(K: KAPLAYCtx): KAPLAYDistanceCompPlusPlugin 
                     }
                 },
                 get worldP2() {
-                    return this.other.transform.transformPointV(this.p2, scratch1);
+                    return this.other.transform.transformPointV(
+                        this.p2,
+                        scratch1,
+                    );
                 },
                 get worldP1() {
-                    return (this as any).transform.transformPointV(this.p1, scratch2);
+                    return (this as any).transform.transformPointV(
+                        this.p1,
+                        scratch2,
+                    );
                 },
                 get localP1() {
-                    return (this as any).transform.inverse.transformPointV(this.worldP1, scratch3);
+                    return (this as any).transform.inverse.transformPointV(
+                        this.worldP1,
+                        scratch3,
+                    );
                 },
                 get localP2() {
-                    return (this as any).transform.inverse.transformPointV(this.worldP2, scratch4);
+                    return (this as any).transform.inverse.transformPointV(
+                        this.worldP2,
+                        scratch4,
+                    );
                 },
                 update(this: GameObj<DC>) {
                     math(this);
@@ -98,14 +118,14 @@ export function kaplayExtraDistance(K: KAPLAYCtx): KAPLAYDistanceCompPlusPlugin 
                         pos: K.Vec2.ZERO,
                         pts: [this.localP1, this.localP2],
                     });
-                }
-            }
+                },
+            };
         },
         chainmovable() {
             return {
                 id: "chainmovable",
-                require: ["body"]
-            }
+                require: ["body"],
+            };
         },
     };
 }
@@ -114,7 +134,13 @@ function canBeMoved(obj: GameObj<DC>) {
     return obj.has("chainmovable") && !obj.isStatic;
 }
 
-function doCorrections(A: GameObj<DC>, M: GameObj<DC>, len: number, doMinimum: boolean, K: KAPLAYCtx) {
+function doCorrections(
+    A: GameObj<DC>,
+    M: GameObj<DC>,
+    len: number,
+    doMinimum: boolean,
+    K: KAPLAYCtx,
+) {
     // world vector A -> B
     const B = M.other as GameObj<DC>;
     const { x: dx, y: dy } = M.worldP2.sub(M.worldP1);
@@ -153,7 +179,7 @@ function doCorrections(A: GameObj<DC>, M: GameObj<DC>, len: number, doMinimum: b
     const vA = A.vel ?? K.Vec2.ZERO;
     const vB = B.vel ?? K.Vec2.ZERO;
     // relative velocity along dir (scalar): (vB - vA).dot(u)
-    const relAlong = ((vB.x - vA.x) * ux + (vB.y - vA.y) * uy);
+    const relAlong = (vB.x - vA.x) * ux + (vB.y - vA.y) * uy;
     if (!doMinimum && relAlong < 0) return;
     const factor = relAlong * A.beta;
     // velocity change to apply: dvA = +u * (invA/invSum) * relAlong

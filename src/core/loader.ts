@@ -2,9 +2,7 @@ import * as Y from "yjs";
 import { Keys } from "../config/keys";
 import { Store } from "./store";
 
-/**
- * Stores the data for the world, the loaded mods, etc
- */
+/** Stores the data for the world, the loaded mods, etc */
 export class GameWorld extends Store {
     readonly _mods: Y.Map<Y.Array<Y.Map<any>>>;
     readonly _localPrefs: Y.Map<any>;
@@ -22,7 +20,8 @@ export class GameWorld extends Store {
 }
 
 /**
- * Stores the data for global settings and stuff, such as global preferences, mod settings, etc
+ * Stores the data for global settings and stuff, such as global preferences,
+ * mod settings, etc
  */
 export class GlobalSettings extends Store {
     _worlds: Y.Array<string>;

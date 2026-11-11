@@ -4,3 +4,6 @@ bun = true
 tabWidth = 4
 jsdoc = true
 ignorePatterns = ["backolon/**", "archive/**"]
+[[fmt.overrides]]
+files = ["test/**"]
+options = { printWidth = 100000000 }

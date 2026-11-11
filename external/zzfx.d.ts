@@ -1,10 +1,10 @@
 declare module "zzfx" {
     export const ZZFX: {
-        volume: number
-        sampleRate: number
-        x: AudioContext
-        play(...parameters: (number | undefined)[]): AudioBufferSourceNode
-        playSamples(...samples: number[]): AudioBufferSourceNode
+        volume: number;
+        sampleRate: number;
+        x: AudioContext;
+        play(...parameters: (number | undefined)[]): AudioBufferSourceNode;
+        playSamples(...samples: number[]): AudioBufferSourceNode;
         buildSamples(
             volume?: number,
             randomness?: number,
@@ -26,8 +26,8 @@ declare module "zzfx" {
             sustainVolume?: number,
             decay?: number,
             tremolo?: number,
-            filter?: number
-        ): number[]
-        getNote(semitoneOffset?: number, rootNoteFrequency?: number): number
+            filter?: number,
+        ): number[];
+        getNote(semitoneOffset?: number, rootNoteFrequency?: number): number;
     };
 }

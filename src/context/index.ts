@@ -35,7 +35,9 @@ export const K = kaplay({
 });
 
 K.onLoadError((which, e) => {
-    const newError = new Error(`Error while loading ${which}: ${e.error?.message ?? e.error}`);
+    const newError = new Error(
+        `Error while loading ${which}: ${e.error?.message ?? e.error}`,
+    );
     if (e.error?.stack) newError.stack = e.error.stack;
     throw newError;
 });

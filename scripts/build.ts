@@ -29,8 +29,9 @@ await Bun.build({
         {
             name: "nonexistent_go_bye_bye",
             setup(build) {
-                build.onResolve({ filter: /\.p$/ }, async args => {
-                    if (!fs.existsSync(path.join(args.resolveDir, args.path))) return { path: args.path, external: true };
+                build.onResolve({ filter: /\.p$/ }, async (args) => {
+                    if (!fs.existsSync(path.join(args.resolveDir, args.path)))
+                        return { path: args.path, external: true };
                 });
             },
         },
@@ -62,5 +63,5 @@ await Bun.build({
         //         });
         //     }
         // }
-    ]
+    ],
 });

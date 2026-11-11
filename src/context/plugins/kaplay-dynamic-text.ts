@@ -2,38 +2,41 @@ import type { Asset, Comp, GameObj, KAPLAYCtx, TextComp } from "kaplay";
 
 export type NestedStrings = {
     [i: string]:
-    | NestedStrings
-    | string
-    | NestedStrings[]
-    | ((inside: string) => string)
+        NestedStrings | string | NestedStrings[] | ((inside: string) => string);
 };
 
 export interface DynamicTextComp extends Comp {
-    t: string
-    data: NestedStrings
+    t: string;
+    data: NestedStrings;
 }
 
 export interface KAPLAYDynamicTextPlugin {
-    strings: NestedStrings,
-    langs: string[],
-    preferredLanguage: string | null
-    sub(s: string, vars?: NestedStrings): string
-    addStrings(s: NestedStrings): Asset<NestedStrings>
+    strings: NestedStrings;
+    langs: string[];
+    preferredLanguage: string | null;
+    sub(s: string, vars?: NestedStrings): string;
+    addStrings(s: NestedStrings): Asset<NestedStrings>;
     addLanguageURL(lang: string, url: string): void;
-    setAvailableLanguages(langs: KAPLAYDynamicTextPlugin["langs"]): void
+    setAvailableLanguages(langs: KAPLAYDynamicTextPlugin["langs"]): void;
     useLanguage(lang: string | null): void;
     currentLanguage(): string;
-    dynamicText(t?: string): DynamicTextComp
+    dynamicText(t?: string): DynamicTextComp;
 }
 
-export function kaplayDynamicStrings(K: KAPLAYCtx & KAPLAYDynamicTextPlugin): KAPLAYDynamicTextPlugin {
+export function kaplayDynamicStrings(
+    K: KAPLAYCtx & KAPLAYDynamicTextPlugin,
+): KAPLAYDynamicTextPlugin {
     const _langUrls: Record<string, string[]> = {};
     const _loaded: Record<string, boolean> = {};
     const _lazyLoad = (lang: string) => {
         const urls = _langUrls[lang] ?? [];
         _loaded[lang] = true;
-        urls.forEach(url => fetch(url).then(resp => resp.json()).then(json => Object.assign(K.strings[lang] ??= {}, json)));
-    }
+        urls.forEach((url) =>
+            fetch(url)
+                .then((resp) => resp.json())
+                .then((json) => Object.assign((K.strings[lang] ??= {}), json)),
+        );
+    };
     return {
         strings: {},
         langs: ["en"],
@@ -41,11 +44,12 @@ export function kaplayDynamicStrings(K: KAPLAYCtx & KAPLAYDynamicTextPlugin): KA
         sub(s, vars) {
             return subStrings(s, {
                 ...K.strings,
-                inputType: K.getLastInputDeviceType() === "gamepad"
-                    ? "gamepad"
-                    : "keyboard",
+                inputType:
+                    K.getLastInputDeviceType() === "gamepad"
+                        ? "gamepad"
+                        : "keyboard",
                 lang: K.currentLanguage(),
-                ...vars
+                ...vars,
             });
         },
         addStrings(strings) {
@@ -77,13 +81,14 @@ export function kaplayDynamicStrings(K: KAPLAYCtx & KAPLAYDynamicTextPlugin): KA
                     this.text = K.sub(this.t, this.data);
                 },
                 inspect(this: GameObj<TextComp | DynamicTextComp>) {
-                    const esc = (s: string) => s.replaceAll(/(?<!\\)([[\\])/g, "\\$1")
+                    const esc = (s: string) =>
+                        s.replaceAll(/(?<!\\)([[\\])/g, "\\$1");
                     return "sub: " + esc(this.t) + "\nres: " + esc(this.text);
-                }
-            }
-        }
-    }
-};
+                },
+            };
+        },
+    };
+}
 
 function matchiness(a: string, b: string) {
     const aa = new Intl.Locale(a);
@@ -93,7 +98,9 @@ function matchiness(a: string, b: string) {
     return 0;
 }
 
-function findPreferredLanguage(availableLangs: NavigatorLanguage["languages"]): NavigatorLanguage["language"] {
+function findPreferredLanguage(
+    availableLangs: NavigatorLanguage["languages"],
+): NavigatorLanguage["language"] {
     const preferredLangs = navigator?.languages ?? [navigator.language];
     var bestScore = -1;
     var bestLang = "";
@@ -117,9 +124,16 @@ function subStrings(text: string, vars: NestedStrings): string {
     var changed = 0;
     const anyfun = Object.keys(functions).join("|");
     // Sort by length so we're greedy
-    const strNames = Object.keys(flatStrings).sort((a, b) => b.length - a.length);
-    const anykey = strNames.map(s => s.replaceAll(/\./g, "\\.")).join("|")
-    const funcRegex = anyfun ? new RegExp(`\\$(${anyfun})\\(((?:(?!\\$(?:${anyfun}))(?!&(?:${anykey}))[\\s\\S])*?)\\)`, "gm") : undefined;
+    const strNames = Object.keys(flatStrings).sort(
+        (a, b) => b.length - a.length,
+    );
+    const anykey = strNames.map((s) => s.replaceAll(/\./g, "\\.")).join("|");
+    const funcRegex = anyfun
+        ? new RegExp(
+              `\\$(${anyfun})\\(((?:(?!\\$(?:${anyfun}))(?!&(?:${anykey}))[\\s\\S])*?)\\)`,
+              "gm",
+          )
+        : undefined;
     do {
         for (var i = 0; i < strNames.length; i++) {
             const key = strNames[i]!;
@@ -133,7 +147,10 @@ function subStrings(text: string, vars: NestedStrings): string {
             const mm = funcRegex.exec(text);
             if (mm) {
                 if (mm[1]! in functions) {
-                    text = text.replace(new RegExp(`\\$${mm[1]}\\(${mm[2]}\\)`, "gm"), functions[mm[1]!]!(mm[2]!));
+                    text = text.replace(
+                        new RegExp(`\\$${mm[1]}\\(${mm[2]}\\)`, "gm"),
+                        functions[mm[1]!]!(mm[2]!),
+                    );
                 } else throw new Error("bad");
                 changed = 2;
             }
@@ -144,24 +161,27 @@ function subStrings(text: string, vars: NestedStrings): string {
 
 function flatten(vars: NestedStrings) {
     const flatStrings: Record<string, string> = {};
-    const functions: Record<string, ((inside: string) => string)> = {};
-    const recur = (curPath: string[], obj: NestedStrings[keyof NestedStrings]) => {
+    const functions: Record<string, (inside: string) => string> = {};
+    const recur = (
+        curPath: string[],
+        obj: NestedStrings[keyof NestedStrings],
+    ) => {
         const dotPath = curPath.join(".");
         if (Array.isArray(obj)) {
             flatStrings[dotPath + ".length"] = "" + obj.length;
             for (var i = 0; i < obj.length; i++) {
                 recur(curPath.concat("" + i), obj[i]!);
             }
-        }
-        else if (typeof obj === "string") {
+        } else if (typeof obj === "string") {
             flatStrings[dotPath] = obj;
-        }
-        else if (typeof obj === "function") {
+        } else if (typeof obj === "function") {
             functions[dotPath] = obj;
-        }
-        else if (typeof obj === "object") {
+        } else if (typeof obj === "object") {
             if (obj === null) flatStrings[dotPath] = "NULL?";
-            else Object.entries(obj).forEach(next => recur(curPath.concat(next[0]), next[1]));
+            else
+                Object.entries(obj).forEach((next) =>
+                    recur(curPath.concat(next[0]), next[1]),
+                );
         } else {
             throw new Error(`bad type to flatten(): ${obj} (${curPath})`);
         }

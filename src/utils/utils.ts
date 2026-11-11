@@ -1,4 +1,7 @@
-export function isinstance<C>(obj: any, cls: abstract new (...args: any[]) => C): obj is C {
+export function isinstance<C>(
+    obj: any,
+    cls: abstract new (...args: any[]) => C,
+): obj is C {
     return obj instanceof cls;
 }
 
@@ -7,9 +10,13 @@ var idCounter = 0;
 export const id = (obj: any): number => {
     if (!idMap.has(obj)) idMap.set(obj, idCounter++);
     return idMap.get(obj)!;
-}
+};
 
-export function chooseWeights<T>(vals: T[], weights: number[], rand: number): T {
+export function chooseWeights<T>(
+    vals: T[],
+    weights: number[],
+    rand: number,
+): T {
     rand *= weights.reduce((a, b) => a + b);
     for (var i = 0; i < vals.length; i++) {
         rand -= weights[i]!;
